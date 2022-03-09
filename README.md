@@ -1,1 +1,0 @@
-# Lagalt-Frontend
