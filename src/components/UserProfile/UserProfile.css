@@ -77,11 +77,19 @@ button.primary.ghost {
 
 .skills {
 	background-color: #1F1A36;
-	text-align: left;
+	text-align: center;
 	padding: 15px;
 	margin-top: 30px;
+
 }
 
+.portofolio{
+	background-color: #1F1A36;
+	text-align: center;
+	padding: 15px;
+	margin-top: 30px;
+
+}
 .skills ul {
 	list-style-type: none;
 	margin: 0;
@@ -96,6 +104,15 @@ button.primary.ghost {
 	margin: 0 7px 7px 0;
 	padding: 7px;
 }
+.portofolio ul li {
+	border: 1px solid #2D2747;
+	border-radius: 2px;
+	display: block;
+	font-size: 12px;
+	margin: 0 7px 7px 0;
+	padding: 7px;
+}
+
 
 footer {
     background-color: #222;

@@ -16,9 +16,14 @@ export const UserProfile = () => {
         <p>
           User interface designer and <br /> front-end developer
         </p>
-        <div class="buttons">
-          <button class="primary">Message</button>
-          <button class="primary ghost">Following</button>
+      
+        <div class="portofolio">
+          <h3>Portfolio</h3>
+          <ul>
+            <li>Project Name</li>
+            <li>Description</li>
+            <li>Category</li>
+          </ul>
         </div>
         <div class="skills">
           <h6>Skills</h6>
