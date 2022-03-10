@@ -1,7 +1,18 @@
-import React from "react"
+import React, { useState } from "react"
+
+import { ApprovalForm } from "../approval-form/ApprovalForm"
 import "./project-item.css"
 
 const ProjectItem = () => {
+
+	const [displayForm , setDisplayForm] = useState(false);
+	
+
+	const ApprovalFormHandler = () =>{
+		setDisplayForm(true)
+
+	}
+
 	return (
 		<>
 			<main className="project-item-container">
@@ -13,7 +24,9 @@ const ProjectItem = () => {
 				<div className="">gitRepo</div>
 				<div className="">messageBoard</div>
 				<div className="">
-					<button>contribute</button>
+					<button onClick={ApprovalFormHandler}>contribute</button>
+					{displayForm && <ApprovalForm/>}
+
 				</div>
 			</main>
 		</>
