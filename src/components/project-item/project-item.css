@@ -1,0 +1,10 @@
+.project-item-container {
+	background-color: white;
+	color: gray;
+	width: 100%;
+
+	margin-bottom: 1rem;
+	border-radius: 0.2rem;
+	border: 1px solid lightgrey;
+	padding: 1rem;
+}
