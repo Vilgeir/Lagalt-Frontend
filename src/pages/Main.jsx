@@ -1,12 +1,15 @@
-import React from "react"
-import ProjectList from "../components/project-list/ProjectList"
+import React from "react";
+import { FilterProject } from "../components/Filter/FilterProjects";
+import ProjectList from "../components/project-list/ProjectList";
 
 const Main = () => {
-	return (
-		<>
-			<ProjectList />
-		</>
-	)
-}
+  return (
+    <>
+      <FilterProject />
 
-export default Main
+      <ProjectList />
+    </>
+  );
+};
+
+export default Main;
