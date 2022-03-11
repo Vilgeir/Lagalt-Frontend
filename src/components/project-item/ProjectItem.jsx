@@ -3,30 +3,28 @@ import React, { useState } from "react"
 import { ApprovalForm } from "../approval-form/ApprovalForm"
 import "./project-item.css"
 
-const ProjectItem = () => {
-
-	const [displayForm , setDisplayForm] = useState(false);
-	
-
-	const ApprovalFormHandler = () =>{
-		setDisplayForm(true)
-
-	}
-
+const ProjectItem = (prop) => {
 	return (
 		<>
-			<main className="project-item-container">
-				<h3 className="projectTitle">title</h3>
-				<p className="description">description</p>
-				<span className=""> tags </span>
-				<div className="">image</div>
+			<main id="project-item-container">
+				<header id="item-header">
+					<h3 id="project-title">{prop.title}</h3>
+					<button id="join-button">Bli med</button>
+				</header>
+				<div id="item-body" onClick={prop.handleOpen}>
+					<img id="item-img" src="/images/no-image.jpg"></img>
+					<div id="description">
+						<span>{prop.description}</span>
 
-				<div className="">gitRepo</div>
-				<div className="">messageBoard</div>
+						<div id="tags">
+							<span className="">gitRepo</span>
+							<span className="">Tags Tags Tags</span>
+						</div>
+					</div>
+				</div>
 				<div className="">
-					<button onClick={ApprovalFormHandler}>contribute</button>
-					{displayForm && <ApprovalForm/>}
-
+					<button>contribute</button>
+					<span className="">Meldinger</span>
 				</div>
 			</main>
 		</>
