@@ -1,6 +1,4 @@
-import React, { useState } from "react"
-
-import { ApprovalForm } from "../approval-form/ApprovalForm"
+import React from "react"
 import "./project-item.css"
 
 const ProjectItem = (prop) => {

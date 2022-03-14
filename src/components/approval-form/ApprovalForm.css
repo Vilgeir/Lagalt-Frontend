@@ -1,18 +1,16 @@
-.form{
-    width: 230px;
-	height:60px;
-	border:1px solid #3366FF;
-	border-left: 4px solid #3366FF;
+.form {
+	width: 230px;
+	height: 60px;
+	border: 1px solid #3366ff;
+	border-left: 4px solid #3366ff;
 }
 
-
-.button{
-    display: block;
-    border-radius: 17px;
-    background-color: whitesmoke;
+.button {
+	display: block;
+	border-radius: 17px;
+	background-color: whitesmoke;
 }
 
 .classWrapper {
-    margin: 10px, 10px, 10px ,10px ;
-
+	margin: 10px, 10px, 10px, 10px;
 }
