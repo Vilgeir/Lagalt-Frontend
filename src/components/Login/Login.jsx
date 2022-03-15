@@ -1,33 +1,32 @@
 import "./Login.css"
-
 import { useNavigate } from "react-router-dom"
 
 import {
-  facebookProvider,
-  githubProvider,
-  googleProvider,
+	facebookProvider,
+	githubProvider,
+	googleProvider,
 } from "../../config/AuthMethods"
 import socialMediaAuth from "../../auth/auth"
 export const Login = () => {
-  const navigate = useNavigate()
+	const navigate = useNavigate()
 
-  const handleLogin = async (provider) => {
-    const res = await socialMediaAuth(provider)
-    navigate("/profile")
-  }
+	const handleLogin = async (provider) => {
+		const res = await socialMediaAuth(provider)
+		navigate("/profile")
+	}
 
-  return (
-    <div className="card">
-      <button onClick={() => handleLogin(googleProvider)} className="">
-        <span>Continue with Google</span>{" "}
-      </button>
-      <button onClick={() => handleLogin(facebookProvider)} className="">
-        <span>Continue with facebook</span>
-      </button>
+	return (
+		<div className="card">
+			<button onClick={() => handleLogin(googleProvider)} className="">
+				<span>Continue with Google</span>{" "}
+			</button>
+			<button onClick={() => handleLogin(facebookProvider)} className="">
+				<span>Continue with facebook</span>
+			</button>
 
-      <button onClick={() => handleLogin(githubProvider)}>Github</button>
-    </div>
-  )
+			<button onClick={() => handleLogin(githubProvider)}>Github</button>
+		</div>
+	)
 }
 
 // Auth = getAuth()
