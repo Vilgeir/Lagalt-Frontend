@@ -1,19 +1,30 @@
-import React from "react";
-import "./navbar.css";
+import React from "react"
+import { NavLink } from "react-router-dom"
+import { Login } from "../Login/Login"
+import SearchBar from "../searchbar/SearchBar"
+import "./navbar.css"
 
 const NavBar = () => {
   return (
     <div>
       <nav className="navbar-container">
-        <h3>Username</h3>
-        <button id="login-button">Login</button>
+        <NavLink to="/">
+          <h2>Lag Alt</h2>
+        </NavLink>
+        <SearchBar />
+        <div className="right-container">
+          <NavLink id="create-nav" to="/create">
+            <p id="create-button">+</p>
+          </NavLink>
+          <NavLink to="/login">
+            <button id="login-button">Login</button>
+          </NavLink>
+        </div>
       </nav>
-	 
-	  <div>
-	  
-	  </div>
-    </div>
-  );
-};
 
-export default NavBar;
+      <div></div>
+    </div>
+  )
+}
+
+export default NavBar

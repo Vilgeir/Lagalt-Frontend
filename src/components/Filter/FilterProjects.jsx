@@ -1,9 +1,7 @@
+import "./FilteredForm.css"
+import SearchBar from "../searchbar/SearchBar"
 
-import './FilteredForm.css'
-
-
-
-export const FilterProject = () => {
+const FilterProject = () => {
   return (
     <main className="filteredForm">
       <div className="filteredItem">
@@ -13,15 +11,10 @@ export const FilterProject = () => {
           <option>Game Development</option>
           <option>Web Development</option>
         </select>
-        </div>
-
-        <div className="searchItem">
-          <form >
-            <input type="text" placeholder="search a project" className="searchForm"></input>
-            <button type="submit" className="searchButton"> Search </button>
-          </form>
-        </div>
-     
+      </div>
+      <SearchBar />
     </main>
-  );
-};
+  )
+}
+
+export default FilterProject

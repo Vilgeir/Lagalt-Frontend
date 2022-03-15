@@ -1,47 +1,14 @@
-.filteredForm{
-
-display: flex;
-width: 100%;
-margin: 1rem;
+.filteredForm {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: white;
+  border: 1px solid lightgrey;
+  border-radius: 0.2rem;
 }
 
-.filteredItem{
-
- flex: 50%;
- height: 40px;
-}
-
-
-.searchItem{
-flex: 10%;
-height: 40px;
-justify-content: flex-end;
-
-
-}
-
-
-.selectionFilter{
-    height: 30px;
-
-
-
-}
-
-.searchForm{
-    height: 25px;
-
-
-
-}
-
-.searchButton{
-    height: 25px;
-    border-radius: 10px;
-    margin: 0.5rem
-
-}
-
-.searchOption{
-    font-weight: 800;
+.filteredItem {
 }
