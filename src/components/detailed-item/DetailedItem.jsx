@@ -11,16 +11,21 @@ const DetailedItem = (prop) => {
 					<div id="">
 						<h1>{prop.title}</h1>
 						<p id="project-summary">{prop.description}</p>
-						<h3>Tags</h3>
+						<p>Tags</p>
 						<div id="tag-container">
-							<div className="tag-box">Film</div>
-							<div className="tag-box">Spill</div>
-							<div className="tag-box">TV</div>
-							<div className="tag-box">Håndverk</div>
+							{prop.tags.map((tag, key) => (
+								<div className="tag-box" key={key}>
+									{tag}
+								</div>
+							))}
 						</div>
-						<h3>Git repo</h3>
-						<h3>Forum</h3>
-						<h3>Chat</h3>
+						<div>
+							<p>Git repo</p>
+							<a href={prop.gitlink}>{prop.gitlink}</a>
+						</div>
+
+						<p>Forum</p>
+						<p>Chat</p>
 						<input
 							id="message-input"
 							type="text"

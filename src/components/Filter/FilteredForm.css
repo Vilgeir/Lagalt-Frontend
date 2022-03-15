@@ -1,14 +1,29 @@
 .filteredForm {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 1rem;
-  background-color: white;
-  border: 1px solid lightgrey;
-  border-radius: 0.2rem;
+	display: flex;
+	justify-content: space-between;
+	padding: 1rem;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 1rem;
+	background-color: white;
+	border: 1px solid lightgrey;
+	border-radius: 0.2rem;
 }
 
 .filteredItem {
+}
+
+.selectionFilter {
+	width: 10rem;
+	height: 2rem;
+	border: 1px solid lightgray;
+	margin-right: 1rem;
+}
+
+.opt {
+	height: 2rem;
+}
+
+option {
+	height: 2rem;
 }
