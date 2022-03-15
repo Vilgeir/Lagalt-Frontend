@@ -1,55 +1,55 @@
 #project-item-container {
-	background-color: white;
-	color: gray;
-	width: 100%;
-	margin-bottom: 1rem;
-	border-radius: 0.2rem;
-	border: 1px solid lightgray;
-	padding: 1rem;
+  background-color: white;
+  color: gray;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 0.2rem;
+  border: 1px solid lightgray;
+  padding: 1rem;
 }
 
 h3 {
-	margin: 0;
+  margin: 0;
 }
 
 #join-button {
-	width: 5rem;
-	padding: 0.4rem;
-	border-radius: 2rem;
-	border: 2px solid orangered;
-	color: orangered;
-	font-weight: 600;
-	background-color: transparent;
+  width: 5rem;
+  padding: 0.4rem;
+  border-radius: 2rem;
+  border: 2px solid orangered;
+  color: orangered;
+  font-weight: 600;
+  background-color: transparent;
 }
 
 #item-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 #item-body {
-	display: flex;
-	cursor: pointer;
+  display: flex;
+  cursor: pointer;
 }
 
 #item-img {
-	display: block;
-	max-height: 8rem;
-	max-width: 10rem;
-	width: auto;
-	height: auto;
-	margin-right: 1rem;
+  display: block;
+  max-height: 8rem;
+  max-width: 10rem;
+  width: auto;
+  height: auto;
+  margin-right: 1rem;
 }
 
 #description {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 #tags {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
