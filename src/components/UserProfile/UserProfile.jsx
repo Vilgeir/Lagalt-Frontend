@@ -1,7 +1,6 @@
 import "./UserProfile.css"
 
 export const UserProfile = () => {
-  
 	return (
 		<section id="profile-container" className="main-content">
 			<div id="profile-header-container">
