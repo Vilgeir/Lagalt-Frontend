@@ -2,13 +2,13 @@ import "./SearchBar.css"
 
 const SearchBar = () => {
 	return (
-		<div className="searchItem">
+		<div className="search-container">
 			<input
 				type="text"
 				placeholder="Søk blant prosjekter"
 				className="searchForm"
 			></input>
-			<button type="submit" className="searchButton">
+			<button type="submit" className="search-button">
 				Search
 			</button>
 		</div>
