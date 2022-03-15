@@ -1,17 +1,16 @@
 import "./Login.css"
 import { useNavigate } from "react-router-dom"
-
 import {
 	facebookProvider,
 	githubProvider,
 	googleProvider,
 } from "../../config/AuthMethods"
-import socialMediaAuth from "../../auth/auth"
+//import socialMediaAuth from "../../auth/auth"
 export const Login = () => {
 	const navigate = useNavigate()
 
-	const handleLogin = async (provider) => {
-		const res = await socialMediaAuth(provider)
+	const handleLogin = async () => {
+		//const res = await socialMediaAuth(provider)
 		navigate("/profile")
 	}
 
@@ -23,7 +22,6 @@ export const Login = () => {
 			<button onClick={() => handleLogin(facebookProvider)} className="">
 				<span>Continue with facebook</span>
 			</button>
-
 			<button onClick={() => handleLogin(githubProvider)}>Github</button>
 		</div>
 	)
