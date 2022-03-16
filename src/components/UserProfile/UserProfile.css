@@ -2,14 +2,15 @@
 	width: 80px;
 	height: 80px;
 	border-radius: 100%;
-	border: solid 3px rgba(255, 255, 255, 0.1);
+	border: solid 3px lightgrey;
 }
 
 #profile-container {
 	box-sizing: border-box;
-	color: #fff;
-	background-color: #121212;
+	color: black;
+	background-color: #fff;
 	border-radius: 5px;
+	border: 1px solid lightgrey;
 	margin-bottom: 20px;
 }
 
@@ -34,7 +35,7 @@
 
 #profile-settings-button span:hover {
 	cursor: pointer;
-	font-weight: bold;
+	color: orangered;
 }
 
 #profile-header-container {

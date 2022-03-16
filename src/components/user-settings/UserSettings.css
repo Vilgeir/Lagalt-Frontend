@@ -1,8 +1,9 @@
 #usersettings-container {
-	background-color: #121212;
-	color: white;
+	background-color: #fff;
+	color: black;
 	box-sizing: border-box;
 	border-radius: 5px;
+	border: 1px solid lightgrey;
 }
 
 .labels {
