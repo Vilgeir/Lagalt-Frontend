@@ -1,7 +1,6 @@
 import ProjectItem from "../project-item/ProjectItem"
 
-const url = "https://lagalt.azurewebsites.net/api/Projects/1"
-const apiData = fetch(url).then((data) => data.json())
+//const url = "https://lagalt.azurewebsites.net/api/Projects/1"
 
 const data = [
 	{
