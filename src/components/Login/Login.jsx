@@ -16,13 +16,24 @@ export const Login = () => {
 
 	return (
 		<div className="card">
-			<button onClick={() => handleLogin(googleProvider)} className="">
+			<button
+				onClick={() => handleLogin(googleProvider)}
+				className="login-button"
+			>
 				<span>Continue with Google</span>{" "}
 			</button>
-			<button onClick={() => handleLogin(facebookProvider)} className="">
+			<button
+				onClick={() => handleLogin(facebookProvider)}
+				className="login-button"
+			>
 				<span>Continue with facebook</span>
 			</button>
-			<button onClick={() => handleLogin(githubProvider)}>Github</button>
+			<button
+				onClick={() => handleLogin(githubProvider)}
+				className="login-button"
+			>
+				Github
+			</button>
 		</div>
 	)
 }

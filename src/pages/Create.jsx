@@ -14,17 +14,26 @@ const Create = () => {
 						<option>Web</option>
 					</select>
 				</div>
-				<span className="create-headline">
-					Hva er tittelen på prosjektet?
-				</span>
+				<span className="create-headline">Hva er tittelen på prosjektet?</span>
 				<input className="create-input" placeholder="Tittel"></input>
 				<span className="create-headline">Beskirv prosjektet</span>
-				<input
-					className="create-input"
-					placeholder="Beskrivelse"
-				></input>
+				<input className="create-input" placeholder="Beskrivelse"></input>
 				<span className="create-headline">Git repo</span>
 				<input className="create-input" placeholder="Git repo"></input>
+				<div>
+					<input type="checkbox"></input>
+					<label>Skole</label>
+					<input type="checkbox"></input>
+					<label>Underholdning</label>
+					<input type="checkbox"></input>
+					<label>Skill</label>
+					<input type="checkbox"></input>
+					<label>Skill</label>
+					<input type="checkbox"></input>
+					<label>Skill</label>
+					<input type="checkbox"></input>
+					<label>Skill</label>
+				</div>
 				<h3>Bilde?</h3>
 				<div id="create-save-box">
 					<button id="create-save">Lagre</button>
