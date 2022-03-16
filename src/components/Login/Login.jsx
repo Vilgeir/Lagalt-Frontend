@@ -21,7 +21,7 @@ export const Login = () => {
 				onClick={() => handleLogin(googleProvider)}
 				className="login-button"
 			>
-				<span>Continue with Google</span>{" "}
+				<span>Continue with Google</span>
 			</button>
 			<button
 				onClick={() => handleLogin(facebookProvider)}
