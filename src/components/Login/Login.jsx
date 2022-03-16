@@ -11,7 +11,9 @@ export const Login = () => {
 
 	const handleLogin = async (provider) => {
 		const res = await socialMediaAuth(provider)
-		console.log(res)
+
+		console.log(res.user)
+
 		navigate("/profile")
 	}
 
