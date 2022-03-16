@@ -4,10 +4,12 @@ export const UserProfile = () => {
 	return (
 		<section id="profile-container" className="main-content">
 			<div id="profile-header-container">
-				<img id="avatar" src="http://identicon.net/img/identicon.png"></img>
-				<h1>Navn Navnesen</h1>
+				<div id="profile-avatar-container">
+					<img id="avatar" src="http://identicon.net/img/identicon.png"></img>
+					<h1>Navn Navnesen</h1>
+				</div>
 				<div id="profile-settings-button">
-					<span>X</span>
+					<span className="material-icons">settings</span>
 				</div>
 			</div>
 			<h2>Beskrivelse:</h2>
