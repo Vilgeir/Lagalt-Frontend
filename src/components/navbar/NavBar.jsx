@@ -23,7 +23,7 @@ const NavBar = () => {
 						<p id="create-button">+</p>
 					</NavLink>
 					<NavLink to="/login">
-						{user == null ? (
+						{!!user ? (
 							<button id="login-button">Login</button>
 						) : (
 							<button onClick={logout}>Logout</button>
