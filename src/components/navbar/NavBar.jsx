@@ -6,7 +6,7 @@ import SearchBar from "../searchbar/SearchBar"
 import "./navbar.css"
 
 const NavBar = () => {
-	const user = useUser()
+	const { user } = useUser()
 
 	return (
 		<div>
@@ -20,11 +20,12 @@ const NavBar = () => {
 						<p id="create-button">+</p>
 					</NavLink>
 
-					{!!user ? (
+					{!user && (
 						<NavLink to="/login">
 							<button id="login-button">Login</button>
 						</NavLink>
-					) : (
+					)}
+					{user && (
 						<NavLink to={"/"} onClick={() => firebase.auth().signOut()}>
 							Logout
 						</NavLink>
