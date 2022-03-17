@@ -26,6 +26,7 @@ const NavBar = () => {
 						</NavLink>
 					)}
 
+					{user && <NavLink to={"/profile"}>Profile</NavLink>}
 					{user && (
 						<NavLink to={"/"} onClick={() => firebase.auth().signOut()}>
 							Logout
