@@ -1,0 +1,62 @@
+#create-container {
+	width: 100%;
+	max-width: 50rem;
+}
+
+#create-intro {
+	font-size: large;
+	margin-top: 0;
+}
+
+#item-create {
+	background-color: white;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid lightgrey;
+	border-radius: 0.2rem;
+}
+
+.create-select {
+	display: flex;
+	flex-direction: column;
+}
+
+.create-headline {
+	font-size: medium;
+	padding-bottom: 0.3rem;
+}
+
+.create-input {
+	padding: 0.4rem;
+	margin-bottom: 1rem;
+	border: 1px solid lightgrey;
+	border-radius: 0.2rem;
+}
+
+.create-input-select {
+	width: 10rem;
+	padding: 0.2rem;
+	margin-bottom: 1rem;
+}
+
+#create-save-box {
+	display: flex;
+	justify-content: end;
+}
+
+#create-save {
+	width: 6rem;
+	height: 2rem;
+	border-radius: 1rem;
+	border: 2px solid orangered;
+	color: orangered;
+	background-color: transparent;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+#create-save:hover {
+	background-color: orangered;
+	color: white;
+}

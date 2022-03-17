@@ -1,0 +1,34 @@
+#avatar {
+	width: 80px;
+	height: 80px;
+	border-radius: 100%;
+	border: solid 3px rgba(255, 255, 255, 0.1);
+}
+
+#profile-container {
+	box-sizing: border-box;
+	color: #fff;
+	background-color: #121212;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+#profile-container h1 {
+	display: inline;
+	height: 80px;
+	line-height: 80px;
+}
+
+#profile-settings-button {
+	float: right;
+}
+
+#profile-container p {
+	width: 100%;
+}
+
+.main-content {
+	width: 100%;
+	max-width: 1000px;
+	padding: 20px;
+}
