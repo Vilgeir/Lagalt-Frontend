@@ -28,12 +28,12 @@ const NavBar = () => {
 
 					{user && (
 						<NavLink to={"/profile"}>
-							<span id="profile-button">Profile</span>
+							<span>Profile</span>
 						</NavLink>
 					)}
 					{user && (
 						<NavLink to={"/"} onClick={() => firebase.auth().signOut()}>
-							<span id="logout-button"> Logout </span>
+							<span> Logout </span>
 						</NavLink>
 					)}
 				</div>

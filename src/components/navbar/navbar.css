@@ -20,24 +20,6 @@
 	transition: 0.2s;
 }
 
-#logout-button {
-	height: 2rem;
-	width: 6rem;
-	border-radius: 2rem;
-	background-color: red;
-	color: black;
-	cursor: pointer;
-	transition: 0.2s;
-}
-#profile-button {
-	height: 2rem;
-	width: 6rem;
-	border-radius: 2rem;
-	background-color: grey;
-	color: black;
-	cursor: pointer;
-	transition: 0.2s;
-}
 #login-button:hover {
 	background-color: rgb(255, 106, 52);
 }
