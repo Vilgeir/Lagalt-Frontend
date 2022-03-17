@@ -1,11 +1,16 @@
-import React, { useState } from "react"
+import React from "react"
 import { NavLink } from "react-router-dom"
-import { auth } from "../../config/config-firebase"
+import { useUser } from "../../AuthContext/AuthContext"
+import firebase from "../../config/config-firebase"
 import SearchBar from "../searchbar/SearchBar"
+
 import "./navbar.css"
 
 const NavBar = () => {
-	const [login, setLogin] = useState(false)
+	const user = useUser()
+	const logout = () => {
+		firebase.auth().signOut()
+	}
 
 	return (
 		<div>
@@ -19,7 +24,11 @@ const NavBar = () => {
 						<p id="create-button">+</p>
 					</NavLink>
 					<NavLink to="/login">
-						<button id="login-button">Login</button>
+						{user === null ? (
+							<button id="login-button">Login</button>
+						) : (
+							<button onClick={logout}>Logout</button>
+						)}
 					</NavLink>
 				</div>
 			</nav>

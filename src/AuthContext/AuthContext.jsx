@@ -17,5 +17,4 @@ const AuthProvider = ({ children }) => {
 		<AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
 	)
 }
-
 export default AuthProvider
