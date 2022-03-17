@@ -24,8 +24,7 @@
 	height: 2rem;
 	width: 6rem;
 	border-radius: 2rem;
-	border: 2px solid orangered;
-	background-color: orangered;
+	background-color: red;
 	color: white;
 	cursor: pointer;
 	transition: 0.2s;
@@ -34,8 +33,7 @@
 	height: 2rem;
 	width: 6rem;
 	border-radius: 2rem;
-	border: 2px solid orangered;
-	background-color: orangered;
+	background-color: white;
 	color: white;
 	cursor: pointer;
 	transition: 0.2s;
