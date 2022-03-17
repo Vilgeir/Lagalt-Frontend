@@ -9,6 +9,10 @@ import { Login } from "./components/Login/Login"
 const App = () => {
 	return (
 		<BrowserRouter>
+			<link
+				href="https://fonts.googleapis.com/icon?family=Material+Icons"
+				rel="stylesheet"
+			></link>
 			<NavBar />
 			<div className="app-container">
 				<Routes>

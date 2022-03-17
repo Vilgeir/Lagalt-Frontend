@@ -1,23 +1,30 @@
 import "./UserSettings.css"
 
-export const UserProfile = () => {
+export const UserSettings = () => {
 	return (
-		<section>
+		<section id="usersettings-container" className="main-content">
+			<h1>Bruker informasjon</h1>
 			<form id="user-form">
 				<fieldset>
-					<label id="username">Navn</label>
+					<label className="labels" id="username">
+						Navn
+					</label>
 					<input htmlFor="username" value="Navn"></input>
 				</fieldset>
 				<fieldset>
-					<label id="description">Beskriv deg selv</label>
+					<label className="labels" id="description">
+						Beskriv deg selv
+					</label>
 					<textarea htmlFor="description" form="user-form"></textarea>
 				</fieldset>
 				<fieldset>
-					<label id="skills">Ferdigheter</label>
+					<label className="labels" id="skills">
+						Ferdigheter
+					</label>
 					<input htmlFor="skills"></input>
 				</fieldset>
 				<div id="skills-container"></div>
-				<button>Lagre</button>
+				<button className="save">Lagre</button>
 			</form>
 		</section>
 	)

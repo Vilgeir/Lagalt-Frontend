@@ -1,12 +1,27 @@
 .navbar-container {
 	background-color: white;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 	position: absolute;
 	width: 100%;
 	height: 4rem;
 	border-bottom: 1px solid lightgray;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+.navbar-container h2 {
+	font-family: Knewave;
+	text-decoration: none;
+}
+
+.navbar-container h2:hover {
+	color: orangered;
+}
+
+a {
+	text-decoration: none;
 }
 
 #login-button {

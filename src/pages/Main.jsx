@@ -1,11 +1,11 @@
 import React from "react"
-import FilterProject from "../components/Filter/FilterProjects"
+import FilterProjects from "../components/filter/FilterProjects"
 import ProjectList from "../components/project-list/ProjectList"
 
 const Main = () => {
 	return (
 		<>
-			<FilterProject />
+			<FilterProjects />
 			<ProjectList />
 		</>
 	)
