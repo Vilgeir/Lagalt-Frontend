@@ -1,9 +1,12 @@
-import React from "react"
+import React, { useState } from "react"
 import { NavLink } from "react-router-dom"
+import { auth } from "../../config/config-firebase"
 import SearchBar from "../searchbar/SearchBar"
 import "./navbar.css"
 
 const NavBar = () => {
+	const [login, setLogin] = useState(false)
+
 	return (
 		<div>
 			<nav className="navbar-container">

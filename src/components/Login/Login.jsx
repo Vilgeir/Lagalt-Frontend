@@ -1,5 +1,6 @@
 import "./Login.css"
 import { useNavigate } from "react-router-dom"
+
 import {
 	facebookProvider,
 	githubProvider,
@@ -11,8 +12,6 @@ export const Login = () => {
 
 	const handleLogin = async (provider) => {
 		const res = await socialMediaAuth(provider)
-
-		console.log(res.user.email)
 
 		navigate("/profile")
 	}
