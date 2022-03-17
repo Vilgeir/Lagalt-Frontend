@@ -5,12 +5,13 @@ import {
 	githubProvider,
 	googleProvider,
 } from "../../config/AuthMethods"
-//import socialMediaAuth from "../../auth/auth"
+import socialMediaAuth from "../../auth/auth"
 export const Login = () => {
 	const navigate = useNavigate()
 
-	const handleLogin = async () => {
-		//const res = await socialMediaAuth(provider)
+	const handleLogin = async (provider) => {
+		const res = await socialMediaAuth(provider)
+		console.log(res)
 		navigate("/profile")
 	}
 
@@ -20,7 +21,7 @@ export const Login = () => {
 				onClick={() => handleLogin(googleProvider)}
 				className="login-button"
 			>
-				<span>Continue with Google</span>{" "}
+				<span>Continue with Google</span>
 			</button>
 			<button
 				onClick={() => handleLogin(facebookProvider)}
