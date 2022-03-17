@@ -17,7 +17,6 @@
 		"indent": ["error", "tab"],
 		"quotes": ["error", "double"],
 		"semi": ["error", "never"],
-		"react/prop-types": "off",
-		"no-extra-boolean-cast": 0
+		"react/prop-types": "off" //missing props validation errors, should look into these but disabling rule for now
 	}
 }
