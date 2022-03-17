@@ -1,9 +1,22 @@
+.modal-bg {
+	cursor: pointer;
+}
+
 #usersettings-container {
 	background-color: #fff;
 	color: black;
 	box-sizing: border-box;
 	border-radius: 5px;
 	border: 1px solid lightgrey;
+	margin: 0 auto;
+	position: fixed;
+	top: 80px;
+}
+
+#usersettings-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .labels {
