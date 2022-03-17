@@ -6,7 +6,7 @@ export const UserProfile = (prop) => {
 	const [showModal, setShowModal] = useState(false)
 
 	const handleClick = () => {
-		setShowModal(true)
+		setShowModal(!showModal)
 	}
 
 	return (
@@ -43,7 +43,7 @@ export const UserProfile = (prop) => {
 					</div>
 				</div>
 			</section>
-			{showModal && <UserSettings setShowModal={setShowModal} name="hei" />}
+			{showModal && <UserSettings handleClose={handleClick} {...prop} />}
 		</>
 	)
 }
