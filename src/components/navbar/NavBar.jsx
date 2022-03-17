@@ -1,4 +1,3 @@
-import React from "react"
 import { NavLink } from "react-router-dom"
 import { useUser } from "../../AuthContext/AuthContext"
 import firebase from "../../config/config-firebase"
@@ -24,7 +23,7 @@ const NavBar = () => {
 						<p id="create-button">+</p>
 					</NavLink>
 					<NavLink to="/login">
-						{user === null ? (
+						{user == null ? (
 							<button id="login-button">Login</button>
 						) : (
 							<button onClick={logout}>Logout</button>
