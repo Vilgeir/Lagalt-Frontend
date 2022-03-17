@@ -7,9 +7,6 @@ import "./navbar.css"
 
 const NavBar = () => {
 	const user = useUser()
-	const logout = () => {
-		firebase.auth().signOut()
-	}
 
 	return (
 		<div>
@@ -22,13 +19,14 @@ const NavBar = () => {
 					<NavLink id="create-nav" to="/create">
 						<p id="create-button">+</p>
 					</NavLink>
-					<NavLink to="/login">
-						{!!user ? (
+
+					{!!user ? (
+						<NavLink to="/login">
 							<button id="login-button">Login</button>
-						) : (
-							<button onClick={logout}>Logout</button>
-						)}
-					</NavLink>
+						</NavLink>
+					) : (
+						<NavLink onClick={() => firebase.auth().signOut()}>Logout</NavLink>
+					)}
 				</div>
 			</nav>
 		</div>
