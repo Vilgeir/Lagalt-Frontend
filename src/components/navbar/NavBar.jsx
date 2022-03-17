@@ -20,12 +20,14 @@ const NavBar = () => {
 						<p id="create-button">+</p>
 					</NavLink>
 
-					{!!user ? (
+					{!user ? (
 						<NavLink to="/login">
 							<button id="login-button">Login</button>
 						</NavLink>
 					) : (
-						<NavLink onClick={() => firebase.auth().signOut()}>Logout</NavLink>
+						<NavLink to={"/"} onClick={() => firebase.auth().signOut()}>
+							Logout
+						</NavLink>
 					)}
 				</div>
 			</nav>
