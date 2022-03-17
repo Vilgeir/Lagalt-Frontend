@@ -10,6 +10,7 @@ export const useUser = () => {
 const AuthProvider = ({ children }) => {
 	const [user, setUser] = useState(null)
 	useEffect(() => {
+		console.log(user)
 		firebase.auth().onAuthStateChanged(setUser)
 	}, [])
 
