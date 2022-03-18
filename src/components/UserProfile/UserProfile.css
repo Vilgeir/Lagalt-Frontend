@@ -2,14 +2,14 @@
 	width: 80px;
 	height: 80px;
 	border-radius: 100%;
-	border: solid 3px rgba(255, 255, 255, 0.1);
+	border: 2px solid lightgray;
 }
 
 #profile-container {
 	box-sizing: border-box;
-	color: #fff;
-	background-color: #121212;
-	border-radius: 5px;
+	background-color: white;
+	border-radius: 0.2rem;
+	border: 1px solid lightgray;
 	margin-bottom: 20px;
 }
 

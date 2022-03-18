@@ -6,9 +6,6 @@ export const UserProfile = () => {
 			<div id="profile-header-container">
 				<img id="avatar" src="http://identicon.net/img/identicon.png"></img>
 				<h1>Navn Navnesen</h1>
-				<div id="profile-settings-button">
-					<span>X</span>
-				</div>
 			</div>
 			<h2>Beskrivelse:</h2>
 			<p>
