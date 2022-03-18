@@ -25,12 +25,13 @@
 	font-weight: 200;
 	border: none;
 	display: flex;
-	background-color: #4d1601;
-	color: white;
+	background-color: white;
+	color: black;
 	padding: 0.75rem 3rem;
 	justify-content: space-around;
 	align-items: center;
 	border-radius: 25px;
+	margin: 0.2rem;
 }
 #logout-button:hover,
 #logout-button:active {
