@@ -29,12 +29,12 @@ const NavBar = () => {
 					<div className="profile">
 						{user && (
 							<NavLink to={"/profile"}>
-								<span id="logout-button">Profile</span>
+								<div id="logout-button">Profile</div>
 							</NavLink>
 						)}
 						{user && (
 							<NavLink to={"/"} onClick={() => firebase.auth().signOut()}>
-								<span id="profile-button"> Logout </span>
+								<div id="profile-button"> Logout </div>
 							</NavLink>
 						)}
 					</div>
