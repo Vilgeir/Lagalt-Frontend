@@ -22,14 +22,11 @@
 
 .profile {
 	cursor: pointer;
-}
-#logout-button:hover,
-#logout-button:active {
-	cursor: pointer;
-	font-weight: 200;
+	font-weight: 400;
 	border: none;
 	display: flex;
-	background-color: white;
+	border-style: none;
+	background-color: whitesmoke;
 	color: black;
 	padding: 0.75rem 3rem;
 	justify-content: space-around;
@@ -37,19 +34,7 @@
 	border-radius: 25px;
 	margin: 0.2rem;
 }
-#profile-button {
-	cursor: pointer;
-	font-weight: 200;
-	border: none;
-	display: flex;
-	background-color: white;
-	color: black;
-	padding: 0.75rem 3rem;
-	justify-content: space-around;
-	align-items: center;
-	border-radius: 25px;
-	margin: 0.2rem;
-}
+
 #login-button:hover {
 	background-color: rgb(255, 106, 52);
 }
