@@ -17,7 +17,11 @@ const App = () => {
 				<Routes>
 					<Route path="/" element={<Main />} />
 					{user && <Route path="/profile" element={<Profile />} />}
-					{user && <Route path="/create" element={<Create />} />}
+					{user ? (
+						<Route path="/create" element={<Create />} />
+					) : (
+						<Route path="/login" element={<Login />} />
+					)}
 					<Route path="/login" element={<Login />} />
 				</Routes>
 			</div>
