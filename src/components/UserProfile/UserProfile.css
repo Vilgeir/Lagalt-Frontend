@@ -15,8 +15,7 @@
 
 #profile-container h1 {
 	display: inline;
-	height: 80px;
-	line-height: 80px;
+	margin: 0 0 0 10px;
 }
 
 #profile-settings-button {
@@ -31,4 +30,22 @@
 	width: 100%;
 	max-width: 1000px;
 	padding: 20px;
+}
+
+#profile-settings-button span:hover {
+	cursor: pointer;
+	color: orangered;
+}
+
+#profile-header-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#profile-avatar-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
 }

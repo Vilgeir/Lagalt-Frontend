@@ -4,7 +4,7 @@ import ProjectList from "../components/project-list/ProjectList"
 import Data from "../data/data"
 
 const Main = () => {
-	const [data, setData] = useState(Data)
+	const [data] = useState(Data)
 	return (
 		<>
 			<FilterProject data={data} />

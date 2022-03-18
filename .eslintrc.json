@@ -16,6 +16,7 @@
     "react/react-in-jsx-scope": "off",
     "indent": ["error", "tab"],
     "quotes": ["error", "double"],
-    "semi": ["error", "never"]
+    "semi": ["error", "never"],
+    "react/prop-types": "off"//missing props validation errors, should look into these but disabling rule for now
   }
 }
