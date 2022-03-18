@@ -1,12 +1,14 @@
 import React from "react"
-import FilterProjects from "../components/Filter/FilterProjects"
+import FilterProject from "../components/Filter/FilterProjects"
 import ProjectList from "../components/project-list/ProjectList"
+import Data from "../data/data"
 
 const Main = () => {
+	const [data] = useState(Data)
 	return (
 		<>
-			<FilterProjects />
-			<ProjectList />
+			<FilterProject data={data} />
+			<ProjectList data={data} />
 		</>
 	)
 }

@@ -12,7 +12,7 @@ const NavBar = () => {
 		<div>
 			<nav className="navbar-container">
 				<NavLink to="/">
-					<h2>Lag Alt</h2>
+					<h2>LAGALT</h2>
 				</NavLink>
 				<SearchBar />
 				<div className="right-container">

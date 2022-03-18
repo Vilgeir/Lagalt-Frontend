@@ -1,9 +1,13 @@
 .navbar-container {
 	background-color: white;
 	display: flex;
+<<<<<<< HEAD
 	justify-content: space-around;
+=======
+	justify-content: space-evenly;
+>>>>>>> 2cbe74b2d974d858f51ef754927c9d0a722da71b
 	align-items: center;
-	position: absolute;
+	position: fixed;
 	width: 100%;
 	height: 4rem;
 	border-bottom: 1px solid lightgray;
