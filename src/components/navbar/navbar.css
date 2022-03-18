@@ -22,6 +22,10 @@
 
 .profile {
 	cursor: pointer;
+}
+#logout-button:hover,
+#logout-button:active {
+	cursor: pointer;
 	font-weight: 200;
 	border: none;
 	display: flex;
@@ -33,12 +37,18 @@
 	border-radius: 25px;
 	margin: 0.2rem;
 }
-#logout-button:hover,
-#logout-button:active {
-	background-color: #2c0d00;
-}
 #profile-button {
-	background-color: black;
+	cursor: pointer;
+	font-weight: 200;
+	border: none;
+	display: flex;
+	background-color: white;
+	color: black;
+	padding: 0.75rem 3rem;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 25px;
+	margin: 0.2rem;
 }
 #login-button:hover {
 	background-color: rgb(255, 106, 52);
