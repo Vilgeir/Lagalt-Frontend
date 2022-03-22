@@ -18,6 +18,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     - [`$npm run build`](#npm-run-build)
     - [`$npm run eject`](#npm-run-eject)
   - [API](#api)
+  - [Authors](#authors)
   - [License](#license)
 
 ## Links
@@ -82,6 +83,9 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 ## API
 
 api documentation goes here or maybe in a different readme in the backend directory.
+
+## Authors
+Ludvig Hansen, Mehboob Singh, Michael Zaar, Mohamud Abdi Muhumed and Vilgeir Helgestad.
 
 ## License
 
