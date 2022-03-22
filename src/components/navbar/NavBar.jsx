@@ -16,28 +16,31 @@ const NavBar = () => {
 				</NavLink>
 				<SearchBar />
 				<div className="right-container">
-					<NavLink id="create-nav" to="/create">
-						<p id="create-button">+</p>
-					</NavLink>
-
 					{!user && (
 						<NavLink to="/login">
-							<button id="login-button">Login</button>
+							<button className="button" id="login-button">
+								Login
+							</button>
 						</NavLink>
 					)}
 
-					<div className="profile">
-						{user && (
+					{user && (
+						<>
+							<NavLink id="create-nav" to="/create">
+								<p id="create-button">+</p>
+							</NavLink>
 							<NavLink to={"/profile"}>
-								<div id="logout-button">Profile</div>
+								<button className="button" id="profile-button">
+									Profil
+								</button>
 							</NavLink>
-						)}
-						{user && (
 							<NavLink to={"/"} onClick={() => firebase.auth().signOut()}>
-								<div id="profile-button"> Logout </div>
+								<button className="button" id="logout-button">
+									Logg ut
+								</button>
 							</NavLink>
-						)}
-					</div>
+						</>
+					)}
 				</div>
 			</nav>
 		</div>

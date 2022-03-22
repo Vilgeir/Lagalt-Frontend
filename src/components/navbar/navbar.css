@@ -9,17 +9,6 @@
 	border-bottom: 1px solid lightgray;
 }
 
-#login-button {
-	height: 2rem;
-	width: 6rem;
-	border-radius: 2rem;
-	border: 2px solid orangered;
-	background-color: orangered;
-	color: white;
-	cursor: pointer;
-	transition: 0.2s;
-}
-
 .profile {
 	cursor: pointer;
 	font-weight: 400;
@@ -35,18 +24,34 @@
 	margin: 0.2rem;
 }
 
-#login-button:hover {
-	background-color: rgb(255, 106, 52);
-}
-
 .right-container {
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	width: 10rem;
 }
 
 #create-nav {
 	border: 0;
 	text-decoration: 0;
+}
+
+.button {
+	height: 2rem;
+	border-radius: 2rem;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+#login-button {
+	width: 6rem;
+	border: 2px solid orangered;
+	background-color: orangered;
+	color: white;
+}
+
+#login-button:hover {
+	background-color: rgb(255, 106, 52);
 }
 
 #create-button {
@@ -61,14 +66,38 @@
 	border: 0;
 	background-color: transparent;
 	font-size: xx-large;
-	font-weight: 300;
-	border-radius: 0.1rem;
+	font-weight: 200;
+	border-radius: 0.2rem;
 	transition: 0.2s;
 }
 
 #create-button:hover {
 	background-color: rgb(235, 235, 235);
 	color: orangered;
+}
+
+#profile-button {
+	width: 5rem;
+	border: 2px solid orangered;
+	background-color: orangered;
+	color: white;
+}
+
+#profile-button:hover {
+	background-color: rgb(255, 106, 52);
+}
+
+#logout-button {
+	width: 5rem;
+	margin-left: 0.5rem;
+	border: 2px solid orangered;
+	background-color: white;
+	color: orangered;
+}
+
+#logout-button:hover {
+	background-color: orangered;
+	color: white;
 }
 
 #create-sign {
