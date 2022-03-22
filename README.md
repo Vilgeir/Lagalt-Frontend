@@ -22,7 +22,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Links
 
-* [example link 2](http://example.com/)
+* [LagAlt demo on heroku](https://lagalt2030.herokuapp.com/)
 
 * [example link 2](http://example.com/)
 
