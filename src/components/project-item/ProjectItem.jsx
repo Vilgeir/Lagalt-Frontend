@@ -14,27 +14,27 @@ const ProjectItem = (prop) => {
 			{isOpen && <DetailedItem handleClose={toggleDetails} {...prop} />}
 			<main id="project-item-container">
 				<header id="item-header">
-					<h3 id="project-title">{prop.title}</h3>
+					<h3 id="project-title">{prop.projectTitle}</h3>
 					<button id="join-button">Bli med</button>
 				</header>
 				<div id="item-body" onClick={toggleDetails}>
-					<img id="item-img" src="/images/no-image.jpg"></img>
+					<img id="item-img" src={prop.photo}></img>
 					<div id="description">
 						<span>{prop.description}</span>
 						<div id="tags">
 							<div id="tag-container">
-								{prop.tags.map((tag, key) => (
+								{prop.skills.map((skill, key) => (
 									<div className="tag-box" key={key}>
-										{tag}
+										{skill.skillName}
 									</div>
 								))}
 							</div>
 						</div>
 					</div>
 				</div>
-				<a href={prop.gitlink} className="">
+				{/* <a href={prop.gitlink} className="">
 					{prop.gitlink}
-				</a>
+				</a> */}
 			</main>
 		</>
 	)

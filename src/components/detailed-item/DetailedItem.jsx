@@ -9,19 +9,21 @@ const DetailedItem = (prop) => {
 						X
 					</button>
 					<div id="">
-						<h1>{prop.title}</h1>
+						<h1>{prop.projectTitle}</h1>
+						<span>Beskrivelse:</span>
 						<p id="project-summary">{prop.description}</p>
+						<p>Brukere: {prop.users.map((x) => x.userName + " ")}</p>
 						<p>Tags</p>
 						<div id="tag-container">
-							{prop.tags.map((tag, key) => (
+							{prop.skills.map((skill, key) => (
 								<div className="tag-box" key={key}>
-									{tag}
+									{skill.skillName}
 								</div>
 							))}
 						</div>
 						<div>
 							<p>Git repo</p>
-							<a href={prop.gitlink}>{prop.gitlink}</a>
+							{/* <a href={prop.gitlink}>{prop.gitlink}</a> */}
 						</div>
 
 						<p>Forum</p>
