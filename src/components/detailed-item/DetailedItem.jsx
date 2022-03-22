@@ -12,7 +12,7 @@ const DetailedItem = (prop) => {
 						<h1>{prop.projectTitle}</h1>
 						<span>Beskrivelse:</span>
 						<p id="project-summary">{prop.description}</p>
-						<p>Brukere: {prop.users.map((x) => x.userName + " ")}</p>
+						{/* <p>Brukere: {prop.users.map((x) => x.userName + " ")}</p> */}
 						<p>Tags</p>
 						<div id="tag-container">
 							{prop.skills.map((skill, key) => (

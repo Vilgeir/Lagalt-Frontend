@@ -12,8 +12,6 @@ const ProjectList = ({ data }) => {
 		}
 		return 0
 	} */
-
-	console.log(data)
 	return (
 		<>
 			{data.map((obj, key) => (

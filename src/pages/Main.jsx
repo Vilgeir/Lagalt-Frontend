@@ -3,11 +3,14 @@ import FilterProject from "../components/Filter/FilterProjects"
 import ProjectList from "../components/project-list/ProjectList"
 import { getAllTasks, getFilm, getMusic, getWeb, getGame } from "../api/tasks"
 import { faImage } from "@fortawesome/free-solid-svg-icons"
+import "./Main.css"
 
 const Main = () => {
 	const [data, setData] = useState([])
 	const [sortedProperty, setSortedProperty] = useState("Sorter")
 	const [filterCategory, setFilterProperty] = useState("")
+	const [offset, setOffset] = useState(1)
+	const [limit, setLimit] = useState(10)
 
 	/* fetch("https://lagalt.azurewebsites.net/api/Projects/1")
 		.then((res) => res.json())
@@ -71,13 +74,24 @@ const Main = () => {
 		setData(sortedData)
 	}
 
+	const handleOffset = () => {
+		setOffset(offset + 10)
+		setLimit(offset + 10)
+	}
+
 	useEffect(() => {
 		const findTasks = async () => {
-			const [error, taskData] = await getAllTasks()
-			setData(taskData)
+			const [error, taskData] = await getAllTasks(offset, limit)
+			console.log(taskData)
+			setData(data.concat(taskData))
+
+			if (error) {
+				console.log(error)
+			}
 		}
 		findTasks()
-	}, [])
+	}, [offset])
+
 	return (
 		<>
 			<FilterProject
@@ -88,6 +102,9 @@ const Main = () => {
 			/>
 
 			<ProjectList data={data} />
+			<button id="show-more" onClick={handleOffset}>
+				Vis mer
+			</button>
 		</>
 	)
 }

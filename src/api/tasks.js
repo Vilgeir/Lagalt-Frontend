@@ -4,9 +4,9 @@ const webUrl = "https://lagalt.azurewebsites.net/api/Projects?FieldId=4"
 const filmUrl = "https://lagalt.azurewebsites.net/api/Projects?FieldId=2"
 const gameUrl = "https://lagalt.azurewebsites.net/api/Projects?FieldId=3"
 
-export const getAllTasks = async () => {
+export const getAllTasks = async (offset, limit) => {
 	try {
-		const response = await fetch(apiUrl)
+		const response = await fetch(`${apiUrl}?offset=${offset}&limit=${limit}`)
 		if (!response.ok) {
 			throw new Error("Could not complete request")
 		}
@@ -16,7 +16,6 @@ export const getAllTasks = async () => {
 		console.log(error)
 	}
 }
-
 export const getMusic = async () => {
 	try {
 		const response = await fetch(musicUrl)
