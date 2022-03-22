@@ -1,0 +1,14 @@
+#show-more {
+	width: 8rem;
+	height: 2rem;
+	background-color: orangered;
+	color: white;
+	border: 2px solid orangered;
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+	cursor: pointer;
+}
+
+#show-more:hover {
+	background-color: rgb(255, 106, 52);
+}

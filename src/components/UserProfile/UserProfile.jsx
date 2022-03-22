@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { UserSettings } from "../user-settings/UserSettings"
 import "./UserProfile.css"
+import { useUser } from "../../AuthContext/AuthContext"
 
 export const UserProfile = (prop) => {
 	const [showModal, setShowModal] = useState(false)
@@ -9,13 +10,16 @@ export const UserProfile = (prop) => {
 		setShowModal(!showModal)
 	}
 
+	const { user } = useUser()
+	console.log(user)
+
 	return (
 		<>
 			<section id="profile-container" className="main-content">
 				<div id="profile-header-container">
 					<div id="profile-avatar-container">
-						<img id="avatar" src="http://identicon.net/img/identicon.png"></img>
-						<h1>{prop.name}</h1>
+						<img id="avatar" src={user.photoURL}></img>
+						<h1>{user.displayName}</h1>
 					</div>
 					<div id="profile-settings-button" onClick={handleClick}>
 						<span className="material-icons">settings</span>
