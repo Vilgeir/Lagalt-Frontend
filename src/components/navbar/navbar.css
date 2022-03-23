@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+
 .navbar-container {
 	background-color: white;
 	display: flex;
@@ -7,6 +9,22 @@
 	width: 100%;
 	height: 4rem;
 	border-bottom: 1px solid lightgray;
+}
+
+#title {
+	font-family: "Bungee", cursive;
+	color: orangered;
+	font-size: xx-large;
+	transition: 0.2s;
+}
+
+#title:hover {
+	color: rgb(248, 120, 73);
+}
+
+#title-nav {
+	border: 0;
+	text-decoration: 0;
 }
 
 .profile {
@@ -28,7 +46,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 10rem;
+	width: fit-content;
 }
 
 #create-nav {

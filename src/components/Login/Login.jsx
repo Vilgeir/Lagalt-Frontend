@@ -23,19 +23,22 @@ export const Login = () => {
 				onClick={() => handleLogin(googleProvider)}
 				className="login-button"
 			>
-				<span>Continue with Google</span>
+				<img className="logo" src="/images/google-logo.png"></img>
+				<span>Logg inn med Google</span>
 			</button>
 			<button
 				onClick={() => handleLogin(facebookProvider)}
 				className="login-button"
 			>
-				<span>Continue with facebook</span>
+				<img className="logo" src="/images/facebook-logo.png"></img>
+				<span>Logg inn med facebook</span>
 			</button>
 			<button
 				onClick={() => handleLogin(githubProvider)}
 				className="login-button"
 			>
-				Github
+				<img className="logo" src="/images/guthub-logo.png"></img>
+				<span>Logg inn med GitHub</span>
 			</button>
 		</div>
 	)

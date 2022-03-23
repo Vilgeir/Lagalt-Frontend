@@ -11,8 +11,8 @@ const NavBar = () => {
 	return (
 		<div>
 			<nav className="navbar-container">
-				<NavLink to="/">
-					<h2>LAGALT</h2>
+				<NavLink id="title-nav" to="/">
+					<h2 id="title">LAGALT</h2>
 				</NavLink>
 				<SearchBar />
 				<div className="right-container">
