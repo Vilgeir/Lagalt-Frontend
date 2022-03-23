@@ -1,7 +1,7 @@
 export const createProject = async (formData, skills) => {
 	try {
 		const response = await fetch(
-			"https://lagalt.azurewebsites.net/api/Projects/",
+			"https://lagalt.azurewebsites.net/api/Projects",
 			{
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
@@ -13,7 +13,7 @@ export const createProject = async (formData, skills) => {
 					users: [1],
 					skills: skills,
 					projectLeaderIds: [1],
-					fieldId: formData.fieldId,
+					fieldId: parseInt(formData.fieldId),
 				}),
 			}
 		)
