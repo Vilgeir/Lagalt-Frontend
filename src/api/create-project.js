@@ -17,18 +17,6 @@ export const createProject = async (formData, skills) => {
 				}),
 			}
 		)
-		console.log(
-			JSON.stringify({
-				projectTitle: formData.projectTitle,
-				description: formData.description,
-				photo: formData.photo,
-				progress: "founding",
-				users: [1],
-				skills: skills,
-				projectLeaderIds: [1],
-				fieldId: formData.fieldId,
-			})
-		)
 		if (!response.ok) {
 			console.log(response)
 			throw new Error(response.error)
