@@ -30,14 +30,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Install
 This project uses [node](http://nodejs.org) and [npm](https://npmjs.com). You need to have them locally installed for this project.
 
-Clone down the repository and run the following command.
+Clone down the repository and run the following command:
 
 ``` 
  $npm install
 ```
 
 ## Usage
-To open the website locally run the following command
+To open the website locally run the following command:
 
 ```
 $npm start
