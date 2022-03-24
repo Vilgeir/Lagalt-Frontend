@@ -4,7 +4,7 @@ import Main from "./pages/Main"
 import Profile from "./pages/Profile"
 import NavBar from "./components/navbar/NavBar"
 import Create from "./pages/Create"
-import { Login } from "./components/Login/Login"
+import Login from "./components/login/Login"
 import { useUser } from "./AuthContext/AuthContext"
 
 const App = () => {

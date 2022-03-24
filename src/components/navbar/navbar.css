@@ -73,12 +73,14 @@
 }
 
 #create-button {
-	margin-right: 0.5rem;
+	margin-right: 0.2rem;
+	margin-left: 0.4rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: 2rem;
 	width: 2rem;
+	padding-bottom: 0.2rem;
 	text-align: center;
 	cursor: pointer;
 	border: 0;
@@ -107,7 +109,7 @@
 
 #logout-button {
 	width: 5rem;
-	margin-left: 0.5rem;
+	margin-left: 0.2rem;
 	border: 2px solid orangered;
 	background-color: white;
 	color: orangered;

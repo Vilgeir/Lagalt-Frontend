@@ -1,13 +1,13 @@
 import "./Login.css"
 import { useNavigate } from "react-router-dom"
-
 import {
 	facebookProvider,
 	githubProvider,
 	googleProvider,
 } from "../../config/AuthMethods"
 import socialMediaAuth from "../../auth/auth"
-export const Login = () => {
+
+const Login = () => {
 	const navigate = useNavigate()
 
 	const handleLogin = async (provider) => {
@@ -43,6 +43,8 @@ export const Login = () => {
 		</div>
 	)
 }
+
+export default Login
 
 // Auth = getAuth()
 // signInWithPopup(Auth, provider)
