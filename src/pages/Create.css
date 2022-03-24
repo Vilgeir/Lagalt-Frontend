@@ -1,6 +1,10 @@
 #create-container {
 	width: 100%;
 	max-width: 50rem;
+	background-color: white;
+	border: 1px solid lightgrey;
+	border-radius: 0.2rem;
+	padding: 1rem;
 }
 
 #create-intro {
@@ -9,12 +13,8 @@
 }
 
 #item-create {
-	background-color: white;
-	padding: 1rem;
 	display: flex;
 	flex-direction: column;
-	border: 1px solid lightgrey;
-	border-radius: 0.2rem;
 }
 
 .create-select {
@@ -24,6 +24,7 @@
 
 .create-headline {
 	font-size: medium;
+	font-weight: bold;
 	padding-bottom: 0.3rem;
 }
 
@@ -59,4 +60,20 @@
 #create-save:hover {
 	background-color: orangered;
 	color: white;
+}
+
+#checkbox-container div {
+	display: inline-block !important;
+}
+
+#checkbox-container div input {
+	padding: 5px 0px 5px 5px;
+	width: 10px !important;
+	display: inline-block !important;
+}
+
+#checkbox-container div label {
+	padding: 5px 5px 5px 0px;
+	width: auto !important;
+	display: inline-block !important;
 }
