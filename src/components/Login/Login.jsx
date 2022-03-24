@@ -1,13 +1,13 @@
 import "./Login.css"
 import { useNavigate } from "react-router-dom"
-
 import {
 	facebookProvider,
 	githubProvider,
 	googleProvider,
 } from "../../config/AuthMethods"
 import socialMediaAuth from "../../auth/auth"
-export const Login = () => {
+
+const Login = () => {
 	const navigate = useNavigate()
 
 	const handleLogin = async (provider) => {
@@ -23,23 +23,28 @@ export const Login = () => {
 				onClick={() => handleLogin(googleProvider)}
 				className="login-button"
 			>
-				<span>Continue with Google</span>
+				<img className="logo" src="/images/google-logo.png"></img>
+				<span>Logg inn med Google</span>
 			</button>
 			<button
 				onClick={() => handleLogin(facebookProvider)}
 				className="login-button"
 			>
-				<span>Continue with facebook</span>
+				<img className="logo" src="/images/facebook-logo.png"></img>
+				<span>Logg inn med facebook</span>
 			</button>
 			<button
 				onClick={() => handleLogin(githubProvider)}
 				className="login-button"
 			>
-				Github
+				<img className="logo" src="/images/guthub-logo.png"></img>
+				<span>Logg inn med GitHub</span>
 			</button>
 		</div>
 	)
 }
+
+export default Login
 
 // Auth = getAuth()
 // signInWithPopup(Auth, provider)
