@@ -3,11 +3,10 @@ import { useForm } from "react-hook-form"
 //import { getProject } from "../api/get-project"
 import { updateProject } from "../api/update-project"
 import "./Create.css"
-const UpdateProject = (prop) => {
+const UpdateProject = (data) => {
 	//prop should be response from get request to project with id
 	const { register, handleSubmit } = useForm()
 	const [loading, setLoading] = useState(false)
-	const data = prop
 
 	//Commented functions under saved until get functionality is done
 
