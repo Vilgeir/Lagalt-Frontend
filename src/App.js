@@ -6,6 +6,7 @@ import NavBar from "./components/navbar/NavBar"
 import Create from "./pages/Create"
 import Login from "./components/login/Login"
 import { useUser } from "./AuthContext/AuthContext"
+import UpdateProject from "./pages/updateProject"
 
 const App = () => {
 	const { user } = useUser()
@@ -22,6 +23,7 @@ const App = () => {
 					) : (
 						<Route path="/login" element={<Login />} />
 					)}
+					<Route path="/updateProject" element={<UpdateProject />} />
 				</Routes>
 			</div>
 		</BrowserRouter>
