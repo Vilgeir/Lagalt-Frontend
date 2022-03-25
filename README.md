@@ -25,19 +25,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 * [LagAlt demo on heroku](https://lagalt2030.herokuapp.com/)
 
-* [example link 2](http://example.com/)
-
 ## Install
 This project uses [node](http://nodejs.org) and [npm](https://npmjs.com). You need to have them locally installed for this project.
 
-Clone down the repository and run the following command.
+Clone down the repository and run the following command:
 
 ``` 
  $npm install
 ```
 
 ## Usage
-To open the website locally run the following command
+To open the website locally run the following command:
 
 ```
 $npm start
@@ -89,4 +87,4 @@ Ludvig Hansen, Mehboob Singh, Michael Zaar, Mohamud Abdi Muhumed and Vilgeir Hel
 
 ## License
 
-[MIT © LagAlt](https://choosealicense.com/licenses/mit/)
+[MIT](https://choosealicense.com/licenses/mit/) © LagAlt

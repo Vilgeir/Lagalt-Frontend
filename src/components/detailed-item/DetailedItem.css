@@ -29,7 +29,9 @@
 	position: absolute;
 	right: 1rem;
 	cursor: pointer;
-	border: 2px solid orangered;
+	font-weight: 400;
+	font-size: xx-large;
+	border: 0px solid orangered;
 	background-color: transparent;
 	color: orangered;
 	border-radius: 0.2rem;
@@ -38,8 +40,11 @@
 }
 
 #close-button:hover {
-	background-color: orangered;
-	color: white;
+	background-color: rgb(235, 235, 235);
+}
+
+.undertitle {
+	margin-bottom: 0.2rem;
 }
 
 #tag-container {

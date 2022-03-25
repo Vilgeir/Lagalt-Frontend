@@ -5,16 +5,18 @@ import SearchBar from "../searchbar/SearchBar"
 
 import "./navbar.css"
 
-const NavBar = () => {
+const NavBar = (props) => {
 	const { user } = useUser()
+
+	const { searchData } = props
 
 	return (
 		<div>
 			<nav className="navbar-container">
-				<NavLink to="/">
-					<h2>LAGALT</h2>
+				<NavLink id="title-nav" to="/">
+					<h2 id="title">LAGALT</h2>
 				</NavLink>
-				<SearchBar />
+				<SearchBar searchData={searchData} />
 				<div className="right-container">
 					{!user && (
 						<NavLink to="/login">
