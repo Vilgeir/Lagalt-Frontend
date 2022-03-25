@@ -4,9 +4,13 @@ import { useForm } from "react-hook-form"
 import { updateProject } from "../api/update-project"
 import "./Create.css"
 const UpdateProject = (prop) => {
+	//prop should be response from get request to project with id
 	const { register, handleSubmit } = useForm()
 	const [loading, setLoading] = useState(false)
 	const data = prop
+
+	//Commented functions under saved until get functionality is done
+
 	/*const project = async () => {
 		const [error, response] = await getProject(101)
 		data = response
@@ -31,9 +35,9 @@ const UpdateProject = (prop) => {
 	}*/
 
 	const onSubmit = async ({ ...register }) => {
+		//Setting variables not in form (not supposed to be changed)
 		register.projectId = data.projectId
 		register.projectLeaderIds = data.projectLeaderIds
-		register.progress = data.progress
 		register.users = data.users
 		let skillsTemp = Array.from(
 			document.querySelectorAll("input[name='skills']:checked")
