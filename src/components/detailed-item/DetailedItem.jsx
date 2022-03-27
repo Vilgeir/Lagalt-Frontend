@@ -6,7 +6,7 @@ const DetailedItem = (prop) => {
 		<>
 			<main id="main-container">
 				<div id="view-container">
-					<ProjectSettingsButton />
+					<ProjectSettingsButton projectId={prop.projectId} />
 					<button id="close-button" onClick={prop.handleClose}>
 						X
 					</button>
