@@ -11,25 +11,12 @@ import { useApp } from "./AuthContext/ApplicationContext"
 
 const App = () => {
 	const { user } = useUser()
-	const { data, sortedProperty, filterCategory, offset, limit } = useApp()
-
 	return (
 		<BrowserRouter>
-			<NavBar searchData={data} />
+			<NavBar />
 			<div className="app-container">
 				<Routes>
-					<Route
-						path="/"
-						element={
-							<Main
-								data={data}
-								sortedProperty={sortedProperty}
-								filterCategory={filterCategory}
-								offset={offset}
-								limit={limit}
-							/>
-						}
-					/>
+					<Route path="/" element={<Main />} />
 					{user && <Route path="/profile" element={<Profile />} />}
 					{user ? (
 						<Route path="/create" element={<Create />} />

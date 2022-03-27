@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react"
 import { searchProject } from "../../api/tasks"
+import { useApp } from "../../AuthContext/ApplicationContext"
 
 import "./SearchBar.css"
 
-const SearchBar = (props) => {
-	const { searchData } = props
+const SearchBar = () => {
+	const { searchData } = useApp()
 	const [data, setData] = useState(searchData)
 	const [searchParam, setSearchParam] = useState("")
 

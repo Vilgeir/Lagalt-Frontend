@@ -3,12 +3,13 @@ import FilterProject from "../components/Filter/FilterProjects"
 import ProjectList from "../components/project-list/ProjectList"
 import { getAllTasks, getFilteredCategory } from "../api/tasks"
 import "./Main.css"
+import { useApp } from "../AuthContext/ApplicationContext"
 
-const Main = (props) => {
+const Main = () => {
 	/* fetch("https://lagalt.azurewebsites.net/api/Projects/1")
 		.then((res) => res.json())
 		.then((data) => console.log(data)) */
-	const { data, sortedProperty, filterCategory, offset, limit } = props
+	const { data, sortedProperty, filterCategory, offset, limit } = useApp()
 
 	const [dataMain, setData] = useState(data)
 	const [sortedPropertyMain, setSortedProperty] = useState(sortedProperty)

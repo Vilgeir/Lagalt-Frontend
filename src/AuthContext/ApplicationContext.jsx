@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react"
+import React, { createContext, useContext, useState } from "react"
 
 const AppContext = createContext()
 
@@ -13,20 +13,37 @@ const AppProvider = ({ children }) => {
 	const [offset, setOffset] = useState(1)
 	const [limit, setLimit] = useState(10)
 
-	const state = {
-		data,
-		setData,
-		sortedProperty,
-		setSortedProperty,
-		filterCategory,
-		setFilterProperty,
-		offset,
-		setOffset,
-		limit,
-		setLimit,
-	}
+	// const state = {
+	// 	data,
+	// 	setData,
+	// 	sortedProperty,
+	// 	setSortedProperty,
+	// 	filterCategory,
+	// 	setFilterProperty,
+	// 	offset,
+	// 	setOffset,
+	// 	limit,
+	// 	setLimit,
+	// }
 
-	return <AppProvider.Provider value={state}>{children}</AppProvider.Provider>
+	return (
+		<AppProvider.Provider
+			value={{
+				data,
+				setData,
+				sortedProperty,
+				setSortedProperty,
+				filterCategory,
+				setFilterProperty,
+				offset,
+				setOffset,
+				limit,
+				setLimit,
+			}}
+		>
+			{children}
+		</AppProvider.Provider>
+	)
 }
 
 export default AppProvider
