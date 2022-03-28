@@ -15,6 +15,15 @@ const Login = () => {
 		console.log(res)
 
 		navigate("/profile")
+		/* const [error, userResponse] = await loginUser(user)
+		if (error !== null) {
+			console.log(error)
+		}
+		if (userResponse !== null) {
+			setProfileData(userResponse)
+			console.log(profileData)
+			navigate("/profile")
+		} */
 	}
 
 	return (

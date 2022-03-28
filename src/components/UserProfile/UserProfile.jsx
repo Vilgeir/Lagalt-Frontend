@@ -6,6 +6,7 @@ import { loginUser } from "../../api/create-user"
 
 export const UserProfile = (prop) => {
 	const [showModal, setShowModal] = useState(false)
+	const [profile, setProfile] = useState([])
 
 	const handleClick = () => {
 		setShowModal(!showModal)
@@ -20,12 +21,14 @@ export const UserProfile = (prop) => {
 				console.log(error)
 			}
 			if (userResponse !== null) {
-				console.log(userResponse)
+				//console.log(userResponse)
+				setProfile(userResponse)
 			}
 		}
 		makeUser()
-	}, [user])
+	}, [])
 
+	console.log(profile)
 	return (
 		<>
 			<section id="profile-container" className="main-content">
@@ -35,11 +38,11 @@ export const UserProfile = (prop) => {
 						<h1>{user.displayName}</h1>
 					</div>
 					<div id="profile-settings-button" onClick={handleClick}>
-						<span className="material-icons">Intstillinger</span>
+						<span className="material-icons">Innstillinger</span>
 					</div>
 				</div>
 				<h2>Om meg</h2>
-				<p>{prop.description}</p>
+				<p>{profile.userId}</p>
 				<h2>Ferdigheter</h2>
 				<div id="tag-container">
 					{prop.skills.map((skill, key) => (
@@ -52,6 +55,9 @@ export const UserProfile = (prop) => {
 					<h2>Prosjekter</h2>
 					<div>
 						<span>Pågående:</span>
+						{profile.projects.map((projects, key) => (
+							<span key={key}>{projects}</span>
+						))}
 						<div id="profile-current-projects-container"></div>
 					</div>
 					<div>
