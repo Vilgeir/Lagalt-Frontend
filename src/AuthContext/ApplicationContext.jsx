@@ -8,42 +8,13 @@ export const useApp = () => {
 
 const AppProvider = ({ children }) => {
 	const [data, setData] = useState([])
-	const [sortedProperty, setSortedProperty] = useState("Sorter")
-	const [filterCategory, setFilterProperty] = useState("")
-	const [offset, setOffset] = useState(1)
-	const [limit, setLimit] = useState(10)
 
-	// const state = {
-	// 	data,
-	// 	setData,
-	// 	sortedProperty,
-	// 	setSortedProperty,
-	// 	filterCategory,
-	// 	setFilterProperty,
-	// 	offset,
-	// 	setOffset,
-	// 	limit,
-	// 	setLimit,
-	// }
+	const state = {
+		data,
+		setData,
+	}
 
-	return (
-		<AppProvider.Provider
-			value={{
-				data,
-				setData,
-				sortedProperty,
-				setSortedProperty,
-				filterCategory,
-				setFilterProperty,
-				offset,
-				setOffset,
-				limit,
-				setLimit,
-			}}
-		>
-			{children}
-		</AppProvider.Provider>
-	)
+	return <AppContext.Provider value={state}>{children}</AppContext.Provider>
 }
 
 export default AppProvider

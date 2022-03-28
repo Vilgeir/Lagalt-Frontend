@@ -5,8 +5,7 @@ import { useApp } from "../../AuthContext/ApplicationContext"
 import "./SearchBar.css"
 
 const SearchBar = () => {
-	const { searchData } = useApp()
-	const [data, setData] = useState(searchData)
+	const { data, setData } = useApp()
 	const [searchParam, setSearchParam] = useState("")
 
 	useEffect(async () => {

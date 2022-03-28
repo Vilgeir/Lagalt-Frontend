@@ -9,19 +9,17 @@ const Main = () => {
 	/* fetch("https://lagalt.azurewebsites.net/api/Projects/1")
 		.then((res) => res.json())
 		.then((data) => console.log(data)) */
-	const { data, sortedProperty, filterCategory, offset, limit } = useApp()
-
-	const [dataMain, setData] = useState(data)
-	const [sortedPropertyMain, setSortedProperty] = useState(sortedProperty)
-	const [filterCategoryMain, setFilterProperty] = useState(filterCategory)
-	const [offsetMain, setOffset] = useState(offset)
-	const [limitMain, setLimit] = useState(limit)
+	const { data, setData } = useApp()
+	const [sortedProperty, setSortedProperty] = useState("")
+	const [filterCategory, setFilterProperty] = useState("")
+	const [offset, setOffset] = useState(1)
+	const [limit, setLimit] = useState(10)
 
 	const filterByCategory = async (e) => {
 		const filterValue = e.target.value
 		if (filterValue === "") {
 			setFilterProperty("")
-			setData(dataMain)
+			setData(data)
 		}
 		if (filterValue === "1") {
 			const [error, result] = await getFilteredCategory(1)
@@ -56,9 +54,10 @@ const Main = () => {
 			return
 		}
 	}
+
 	const sort = (e) => {
 		const sortValue = e.target.value
-		const sortedData = dataMain.sort((a, b) => {
+		const sortedData = data.sort((a, b) => {
 			if (sortValue === "DESC") {
 				setSortedProperty(sortValue)
 
@@ -76,33 +75,33 @@ const Main = () => {
 	}
 
 	const handleOffset = () => {
-		setOffset(offsetMain + 10)
-		setLimit(offsetMain + 10)
+		setOffset(offset + 10)
+		setLimit(offset + 10)
 	}
 
 	useEffect(() => {
 		const findTasks = async () => {
-			const [error, taskData] = await getAllTasks(offsetMain, limitMain)
+			const [error, taskData] = await getAllTasks(offset, limit)
 			console.log(taskData)
-			setData(dataMain.concat(taskData))
+			setData(data.concat(taskData))
 
 			if (error) {
 				console.log(error)
 			}
 		}
 		findTasks()
-	}, [offsetMain])
+	}, [offset])
 
 	return (
 		<>
 			<FilterProject
 				onSort={sort}
-				sortProperty={sortedPropertyMain}
+				sortProperty={sortedProperty}
 				onFilter={filterByCategory}
-				filterProperty={filterCategoryMain}
+				filterProperty={filterCategory}
 			/>
 
-			<ProjectList data={dataMain} />
+			<ProjectList data={data} />
 			<button id="show-more" onClick={handleOffset}>
 				Vis mer
 			</button>

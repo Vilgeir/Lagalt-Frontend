@@ -6,11 +6,11 @@ import NavBar from "./components/navbar/NavBar"
 import Create from "./pages/Create"
 import Login from "./components/Login/Login"
 import { useUser } from "./AuthContext/AuthContext"
-import React, { useState } from "react"
-import { useApp } from "./AuthContext/ApplicationContext"
+import React from "react"
 
 const App = () => {
 	const { user } = useUser()
+
 	return (
 		<BrowserRouter>
 			<NavBar />

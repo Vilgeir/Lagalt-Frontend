@@ -14,7 +14,7 @@ const Login = () => {
 		const res = await socialMediaAuth(provider)
 		console.log(res)
 
-		navigate("/profile")
+		navigate("/ ")
 	}
 
 	return (
@@ -24,7 +24,7 @@ const Login = () => {
 				className="login-button"
 			>
 				<img className="logo" src="/images/google-logo.png"></img>
-				<span>Logg inn med Google</span>
+				<span>'Logg' inn med Google</span>
 			</button>
 			<button
 				onClick={() => handleLogin(facebookProvider)}
