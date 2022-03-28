@@ -18,13 +18,14 @@ const Create = () => {
 		setLoading(true)
 		const [error] = await createProject(register, skills)
 		if (error !== null) {
-			console.log(error)
+			alert(error + "\n Noe gikk feil, vennligst prøv igjen senere.")
+		} else {
+			setLoading(false)
+			alert(
+				"Prosjektet ble opprettet!\nDu vil nå bli sendt tilbake til hjemmesiden"
+			)
+			navigate("/")
 		}
-		setLoading(false)
-		alert(
-			"Your project is successfully created!\nYou will be redirected to the home page"
-		)
-		navigate("/")
 	}
 
 	return (
@@ -39,7 +40,7 @@ const Create = () => {
 						<input
 							className="create-input"
 							placeholder="Tittel"
-							{...register("projectTitle")}
+							{...register("projectTitle", { required: true })}
 						></input>
 					</div>
 					<div>
@@ -49,7 +50,7 @@ const Create = () => {
 						<textarea
 							className="create-input"
 							placeholder="Beskrivelse"
-							{...register("description")}
+							{...register("description", { required: true })}
 						></textarea>
 					</div>
 					<div>
@@ -59,7 +60,7 @@ const Create = () => {
 						<input
 							className="create-input"
 							placeholder="Git repo"
-							{...register("gitRepoLink")}
+							{...register("gitRepoLink", { required: true })}
 						></input>
 					</div>
 					<div>
@@ -69,7 +70,7 @@ const Create = () => {
 						<input
 							className="create-input"
 							placeholder="www.example.com"
-							{...register("photo")}
+							{...register("photo", { required: true })}
 						></input>
 					</div>
 					<div id="checkbox-container">
@@ -170,7 +171,7 @@ const Create = () => {
 					<select
 						className="create-input-select"
 						defaultValue="0"
-						{...register("fieldId")}
+						{...register("fieldId", { required: true })}
 					>
 						<option value="0" disabled hidden>
 							Velg

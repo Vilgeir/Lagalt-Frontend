@@ -32,13 +32,14 @@ const UpdateProject = () => {
 		setLoading(true)
 		const [error] = await updateProject(register, skills)
 		if (error !== null) {
-			console.log(error)
+			alert(error + "\n Noe gikk feil, vennligst prøv igjen senere.")
+		} else {
+			setLoading(false)
+			alert(
+				"Prosjektet ble oppdatert!\nDu vil nå bli sendt tilbake til hjemmesiden"
+			)
+			navigate("/")
 		}
-		setLoading(false)
-		alert(
-			"Your project is successfully updated!\nYou will be redirected to the home page"
-		)
-		navigate("/")
 	}
 
 	return (
@@ -53,7 +54,7 @@ const UpdateProject = () => {
 						<input
 							className="create-input"
 							defaultValue={state.projectTitle}
-							{...register("projectTitle")}
+							{...register("projectTitle", { required: true })}
 						></input>
 					</div>
 					<div>
@@ -63,7 +64,7 @@ const UpdateProject = () => {
 						<textarea
 							className="create-input"
 							defaultValue={state.description}
-							{...register("description")}
+							{...register("description", { required: true })}
 						></textarea>
 					</div>
 					<div>
@@ -73,7 +74,7 @@ const UpdateProject = () => {
 						<input
 							className="create-input"
 							defaultValue={state.progress}
-							{...register("progress")}
+							{...register("progress", { required: true })}
 						></input>
 					</div>
 					<div>
@@ -83,7 +84,7 @@ const UpdateProject = () => {
 						<input
 							className="create-input"
 							defaultValue={state.photo}
-							{...register("photo")}
+							{...register("photo", { required: true })}
 						></input>
 					</div>
 					<div id="checkbox-container">
@@ -184,7 +185,7 @@ const UpdateProject = () => {
 					<select
 						className="create-input-select"
 						defaultValue={state.field.fieldId}
-						{...register("fieldId")}
+						{...register("fieldId", { required: true })}
 					>
 						<option value="1">Music</option>
 						<option value="2">Film</option>
