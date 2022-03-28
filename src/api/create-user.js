@@ -1,10 +1,11 @@
-const apiKey = "https://lagalt.azurewebsites.net/api/Users/"
+const apiKey = "https://lagalt.azurewebsites.net/api/Users"
+//const api2 = "https://lagalt.azurewebsites.net/api/Users/01108712275"
 
 const checkForUser = async (user) => {
 	try {
-		const response = await fetch(`${apiUrl}${user.uid}`)
+		const response = await fetch(`${apiKey}/${user.uid}`)
 		if (!response.ok) {
-			throw new Error("Could not complete request")
+			throw new Error("Could not complete check")
 		}
 		const data = await response.json()
 
@@ -14,8 +15,9 @@ const checkForUser = async (user) => {
 	}
 }
 
-export const createUser = async (user) => {
+const createUser = async (user) => {
 	try {
+		console.log(user.displayName)
 		const response = await fetch(apiKey, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
@@ -25,11 +27,14 @@ export const createUser = async (user) => {
 				skills: [],
 				userName: user.displayName,
 				email: user.email,
+				description: "",
+				portfolio: "",
 				userPhoto: user.photoURL,
+				hidden: false,
 			}),
 		})
 		if (!response.ok) {
-			throw new Error("could not create project.")
+			throw new Error("Could not create user " + user.displayName)
 		}
 
 		const data = await response.json
@@ -42,11 +47,15 @@ export const createUser = async (user) => {
 export const loginUser = async (user) => {
 	const [checkError, loginUser] = await checkForUser(user)
 
+	console.log(Object.keys(loginUser).length)
+
 	if (checkError !== null) {
-		return [checkError, null]
+		console.log("checkerror")
+		return await createUser(user)
 	}
-	if (loginUser.length > 0) {
-		return [null, loginUser.pop()]
+	if (Object.keys(loginUser).length > 0) {
+		return [null, loginUser]
 	}
+	console.log("trying to crate")
 	return await createUser(user)
 }
