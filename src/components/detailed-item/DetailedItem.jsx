@@ -1,10 +1,12 @@
 import "./DetailedItem.css"
+import ProjectSettingsButton from "../ProjectSettingsButton/ProjectSettingsButton"
 
 const DetailedItem = (prop) => {
 	return (
 		<>
 			<main id="main-container">
 				<div id="view-container">
+					<ProjectSettingsButton projectId={prop.projectId} />
 					<button id="close-button" onClick={prop.handleClose}>
 						X
 					</button>

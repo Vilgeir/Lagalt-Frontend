@@ -1,0 +1,9 @@
+#project-settings-button {
+	float: right;
+	margin-right: 25px;
+}
+
+#project-settings-button span:hover {
+	cursor: pointer;
+	color: orangered;
+}
