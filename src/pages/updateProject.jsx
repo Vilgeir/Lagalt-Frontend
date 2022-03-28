@@ -1,28 +1,42 @@
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
-import { useNavigate } from "react-router-dom"
-import { createProject } from "../api/create-project"
+import { useLocation, useNavigate } from "react-router-dom"
+import { updateProject } from "../api/update-project"
 import "./Create.css"
-
-const Create = () => {
+const UpdateProject = () => {
 	const navigate = useNavigate()
+	const { state } = useLocation()
 	const { register, handleSubmit } = useForm()
 	const [loading, setLoading] = useState(false)
-
+	const checkTheBoxes = () => {
+		const checkedBoxes = document.querySelectorAll("[name='skills'")
+		for (let index = 0; index < checkedBoxes.length; index++) {
+			const element = checkedBoxes[index]
+			for (let index = 0; index < state.skills.length; index++) {
+				if (parseInt(element.value) === state.skills[index].skillId) {
+					element.setAttribute("checked", "")
+				}
+			}
+		}
+	}
+	setTimeout(checkTheBoxes, 10)
 	const onSubmit = async ({ ...register }) => {
+		register.projectId = state.projectId
+		register.projectLeaderIds = state.projectLeaderIds
+		register.users = state.users
 		let skillsTemp = Array.from(
 			document.querySelectorAll("input[name='skills']:checked")
 		).map((elem) => elem.value)
 		let skills = skillsTemp.map(Number)
 
 		setLoading(true)
-		const [error] = await createProject(register, skills)
+		const [error] = await updateProject(register, skills)
 		if (error !== null) {
 			alert(error + "\n Noe gikk feil, vennligst prøv igjen senere.")
 		} else {
 			setLoading(false)
 			alert(
-				"Prosjektet ble opprettet!\nDu vil nå bli sendt tilbake til hjemmesiden"
+				"Prosjektet ble oppdatert!\nDu vil nå bli sendt tilbake til hjemmesiden"
 			)
 			navigate("/")
 		}
@@ -30,7 +44,7 @@ const Create = () => {
 
 	return (
 		<main id="create-container">
-			<p id="create-intro">Lag nytt prosjekt</p>
+			<p id="create-intro">Prosjekt-innstillinger</p>
 			<form id="user-form" onSubmit={handleSubmit(onSubmit)}>
 				<fieldset>
 					<div>
@@ -39,7 +53,7 @@ const Create = () => {
 						</label>
 						<input
 							className="create-input"
-							placeholder="Tittel"
+							defaultValue={state.projectTitle}
 							{...register("projectTitle", { required: true })}
 						></input>
 					</div>
@@ -49,18 +63,18 @@ const Create = () => {
 						</label>
 						<textarea
 							className="create-input"
-							placeholder="Beskrivelse"
+							defaultValue={state.description}
 							{...register("description", { required: true })}
 						></textarea>
 					</div>
 					<div>
-						<label className="create-headline" htmlFor="gitRepoLink">
-							Git repo
+						<label className="create-headline" htmlFor="progress">
+							Status
 						</label>
 						<input
 							className="create-input"
-							placeholder="Git repo"
-							{...register("gitRepoLink", { required: true })}
+							defaultValue={state.progress}
+							{...register("progress", { required: true })}
 						></input>
 					</div>
 					<div>
@@ -69,7 +83,7 @@ const Create = () => {
 						</label>
 						<input
 							className="create-input"
-							placeholder="www.example.com"
+							defaultValue={state.photo}
 							{...register("photo", { required: true })}
 						></input>
 					</div>
@@ -148,8 +162,8 @@ const Create = () => {
 						</div>
 						<div>
 							<input
-								id="web-utvikling-checkbox"
 								type="checkbox"
+								id="web-utvikling-checkbox"
 								name="skills"
 								value="9"
 							></input>
@@ -170,12 +184,9 @@ const Create = () => {
 					<span className="create-headline">Velg en kategori</span>
 					<select
 						className="create-input-select"
-						defaultValue="0"
+						defaultValue={state.field.fieldId}
 						{...register("fieldId", { required: true })}
 					>
-						<option value="0" disabled hidden>
-							Velg
-						</option>
 						<option value="1">Music</option>
 						<option value="2">Film</option>
 						<option value="3">Game-development</option>
@@ -184,7 +195,7 @@ const Create = () => {
 				</fieldset>
 				<div id="create-save-box">
 					<button id="create-save" type="submit" disabled={loading}>
-						Lagre
+						Oppdater
 					</button>
 				</div>
 			</form>
@@ -192,4 +203,4 @@ const Create = () => {
 	)
 }
 
-export default Create
+export default UpdateProject

@@ -6,7 +6,7 @@ import NavBar from "./components/navbar/NavBar"
 import Create from "./pages/Create"
 import Login from "./components/Login/Login"
 import { useUser } from "./AuthContext/AuthContext"
-import React from "react"
+import UpdateProject from "./pages/updateProject"
 import { useApp } from "./AuthContext/ApplicationContext"
 
 const App = () => {
@@ -25,6 +25,7 @@ const App = () => {
 					) : (
 						<Route path="/login" element={<Login />} />
 					)}
+					<Route path="/updateProject" element={<UpdateProject />} />
 				</Routes>
 			</div>
 		</BrowserRouter>
