@@ -1,9 +1,11 @@
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
+import { useNavigate } from "react-router-dom"
 import { createProject } from "../api/create-project"
 import "./Create.css"
 
 const Create = () => {
+	const navigate = useNavigate()
 	const { register, handleSubmit } = useForm()
 	const [loading, setLoading] = useState(false)
 
@@ -19,7 +21,10 @@ const Create = () => {
 			console.log(error)
 		}
 		setLoading(false)
-		alert("project created?")
+		alert(
+			"Your project is successfully created!\nYou will be redirected to the home page"
+		)
+		navigate("/")
 	}
 
 	return (

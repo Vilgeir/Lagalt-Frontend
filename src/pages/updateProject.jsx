@@ -1,43 +1,29 @@
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
-//import { getProject } from "../api/get-project"
+import { useLocation, useNavigate } from "react-router-dom"
 import { updateProject } from "../api/update-project"
 import "./Create.css"
-const UpdateProject = (data) => {
-	//prop should be response from get request to project with id
+const UpdateProject = () => {
+	const navigate = useNavigate()
+	const { state } = useLocation()
 	const { register, handleSubmit } = useForm()
 	const [loading, setLoading] = useState(false)
-
-	//Commented functions under saved until get functionality is done
-
-	/*const project = async () => {
-		const [error, response] = await getProject(101)
-		data = response
-		console.log(data)
-
-		if (error) {
-			console.log(error)
+	const checkTheBoxes = () => {
+		const checkedBoxes = document.querySelectorAll("[name='skills'")
+		for (let index = 0; index < checkedBoxes.length; index++) {
+			const element = checkedBoxes[index]
+			for (let index = 0; index < state.skills.length; index++) {
+				if (parseInt(element.value) === state.skills[index].skillId) {
+					element.setAttribute("checked", "")
+				}
+			}
 		}
-	}*/
-	//hardcoded data variable  .works but need get function to work
-	/*const data = {
-		projectId: 101,
-		projectTitle: "GitGudHub",
-		description: "Github for å bli god i forskjellige ting og tang.",
-		photo:
-			"https://images.unsplash.com/photo-1611698529145-9fabdd4720c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80",
-		progress: "development",
-		field: 1,
-		skills: [8, 9],
-		users: [1],
-		projectLeaderIds: [1],
-	}*/
-
+	}
+	setTimeout(checkTheBoxes, 10)
 	const onSubmit = async ({ ...register }) => {
-		//Setting variables not in form (not supposed to be changed)
-		register.projectId = data.projectId
-		register.projectLeaderIds = data.projectLeaderIds
-		register.users = data.users
+		register.projectId = state.projectId
+		register.projectLeaderIds = state.projectLeaderIds
+		register.users = state.users
 		let skillsTemp = Array.from(
 			document.querySelectorAll("input[name='skills']:checked")
 		).map((elem) => elem.value)
@@ -49,7 +35,10 @@ const UpdateProject = (data) => {
 			console.log(error)
 		}
 		setLoading(false)
-		alert("project updated?")
+		alert(
+			"Your project is successfully updated!\nYou will be redirected to the home page"
+		)
+		navigate("/")
 	}
 
 	return (
@@ -63,7 +52,7 @@ const UpdateProject = (data) => {
 						</label>
 						<input
 							className="create-input"
-							defaultValue={data.projectTitle}
+							defaultValue={state.projectTitle}
 							{...register("projectTitle")}
 						></input>
 					</div>
@@ -73,7 +62,7 @@ const UpdateProject = (data) => {
 						</label>
 						<textarea
 							className="create-input"
-							defaultValue={data.description}
+							defaultValue={state.description}
 							{...register("description")}
 						></textarea>
 					</div>
@@ -83,7 +72,7 @@ const UpdateProject = (data) => {
 						</label>
 						<input
 							className="create-input"
-							defaultValue={data.progress}
+							defaultValue={state.progress}
 							{...register("progress")}
 						></input>
 					</div>
@@ -93,7 +82,7 @@ const UpdateProject = (data) => {
 						</label>
 						<input
 							className="create-input"
-							defaultValue={data.photo}
+							defaultValue={state.photo}
 							{...register("photo")}
 						></input>
 					</div>
@@ -194,7 +183,7 @@ const UpdateProject = (data) => {
 					<span className="create-headline">Velg en kategori</span>
 					<select
 						className="create-input-select"
-						defaultValue={data.fieldId}
+						defaultValue={state.field.fieldId}
 						{...register("fieldId")}
 					>
 						<option value="1">Music</option>
