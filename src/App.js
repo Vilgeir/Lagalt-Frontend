@@ -7,16 +7,18 @@ import Create from "./pages/Create"
 import Login from "./components/Login/Login"
 import { useUser } from "./AuthContext/AuthContext"
 import React from "react"
+import { useApp } from "./AuthContext/ApplicationContext"
 
 const App = () => {
+	const { data, setData } = useApp()
 	const { user } = useUser()
 
 	return (
 		<BrowserRouter>
-			<NavBar />
+			<NavBar data={data} setData={setData} />
 			<div className="app-container">
 				<Routes>
-					<Route path="/" element={<Main />} />
+					<Route path="/" element={<Main data={data} setData={setData} />} />
 					{user && <Route path="/profile" element={<Profile />} />}
 					{user ? (
 						<Route path="/create" element={<Create />} />

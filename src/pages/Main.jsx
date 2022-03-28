@@ -5,11 +5,11 @@ import { getAllTasks, getFilteredCategory } from "../api/tasks"
 import "./Main.css"
 import { useApp } from "../AuthContext/ApplicationContext"
 
-const Main = () => {
+const Main = (props) => {
 	/* fetch("https://lagalt.azurewebsites.net/api/Projects/1")
 		.then((res) => res.json())
 		.then((data) => console.log(data)) */
-	const { data, setData } = useApp()
+	const { data, setData } = props
 	const [sortedProperty, setSortedProperty] = useState("")
 	const [filterCategory, setFilterProperty] = useState("")
 	const [offset, setOffset] = useState(1)
@@ -18,7 +18,7 @@ const Main = () => {
 	const filterByCategory = async (e) => {
 		const filterValue = e.target.value
 		if (filterValue === "") {
-			setFilterProperty("")
+			setFilterProperty(filterValue)
 			setData(data)
 		}
 		if (filterValue === "1") {
@@ -82,7 +82,6 @@ const Main = () => {
 	useEffect(() => {
 		const findTasks = async () => {
 			const [error, taskData] = await getAllTasks(offset, limit)
-			console.log(taskData)
 			setData(data.concat(taskData))
 
 			if (error) {

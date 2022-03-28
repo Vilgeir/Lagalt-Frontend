@@ -4,24 +4,27 @@ import { useApp } from "../../AuthContext/ApplicationContext"
 
 import "./SearchBar.css"
 
-const SearchBar = () => {
-	const { data, setData } = useApp()
+const SearchBar = (props) => {
+	const { data, setData } = props
+	const [x, setX] = useState()
+
 	const [searchParam, setSearchParam] = useState("")
 
 	useEffect(async () => {
+		console.log(x)
+
 		const foundProj = async () => {
 			const [error, result] = await searchProject(searchParam)
+			setX(result)
 
 			if (error) {
 				console.log(error)
 			}
-
-			setData(result)
 		}
 
 		foundProj()
 	}, [searchParam])
-
+	console.log(x)
 	return (
 		<div className="search-container">
 			<input

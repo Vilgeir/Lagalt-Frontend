@@ -1,22 +1,15 @@
 const apiUrl = "https://lagalt.azurewebsites.net/api/Projects/"
-// const musicUrl = "https://lagalt.azurewebsites.net/api/Projects?FieldId=1"
-// const webUrl = "https://lagalt.azurewebsites.net/api/Projects?FieldId=4"
-// const filmUrl = "https://lagalt.azurewebsites.net/api/Projects?FieldId=2"
-// const gameUrl = "https://lagalt.azurewebsites.net/api/Projects?FieldId=3"
 const searchUrl = "https://lagalt.azurewebsites.net/api/Projects/name"
 
-export const searchProject = async (title) => {
+export const searchProject = async (name) => {
 	try {
-		const response = await fetch(`${searchUrl}?name=${title}`)
+		const response = await fetch(`${searchUrl}/${name}`)
 		if (!response.ok) {
 			throw new Error("Could not find the project")
 		}
-
-		const { results } = await response.json()
-		return [null, results]
-	} catch (error) {
-		console.log(error)
-	}
+		const results = await response.json()
+		return [null, [results]]
+	} catch (error) {}
 }
 
 export const getAllTasks = async (offset, limit) => {
@@ -27,9 +20,7 @@ export const getAllTasks = async (offset, limit) => {
 		}
 		const { results } = await response.json()
 		return [null, results]
-	} catch (error) {
-		console.log(error)
-	}
+	} catch (error) {}
 }
 export const getFilteredCategory = async (fieldId) => {
 	try {
@@ -39,9 +30,7 @@ export const getFilteredCategory = async (fieldId) => {
 		}
 		const { results } = await response.json()
 		return [null, results]
-	} catch (error) {
-		console.log(error)
-	}
+	} catch (error) {}
 }
 
 // export const getFilm = async () => {
