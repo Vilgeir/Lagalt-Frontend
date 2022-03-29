@@ -95,7 +95,9 @@ export const UserProfile = (prop) => {
 					</>
 				)}
 			</section>
-			{showModal && <UserSettings handleClose={handleClick} {...prop} />}
+			{showModal && (
+				<UserSettings handleClose={handleClick} profile={profile} />
+			)}
 		</>
 	)
 }

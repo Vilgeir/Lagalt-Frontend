@@ -11,7 +11,10 @@ const DetailedItem = (prop) => {
 						X
 					</button>
 					<div id="">
-						<h2>{prop.projectTitle}</h2>
+						<div id="headline">
+							<h2 id="text-headline">{prop.projectTitle}</h2>
+							<button id="join-button">Bli med</button>
+						</div>
 						<h4 className="undertitle">Beskrivelse</h4>
 						<span id="project-summary">{prop.description}</span>
 						{/* <p>Brukere: {prop.users.map((x) => x.userName + " ")}</p> */}

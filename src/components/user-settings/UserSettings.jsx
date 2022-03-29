@@ -1,6 +1,22 @@
 import "./UserSettings.css"
+import { updateUser } from "../../api/update-user"
+import { useForm } from "react-hook-form"
 
 export const UserSettings = (prop) => {
+	const { register, handleSubmit } = useForm()
+
+	const onSubmit = async ({ ...register }) => {
+		const [error, updatedData] = await updateUser(register, prop)
+
+		if (error != null) {
+			console.log(error)
+		} else {
+			console.log(updatedData)
+			window.location.reload(true)
+		}
+	}
+
+	console.log(prop.profile)
 	return (
 		<div id="main-container">
 			<section id="usersettings-container" className="main-content">
@@ -10,7 +26,7 @@ export const UserSettings = (prop) => {
 						<span className="material-icons">close</span>
 					</div>
 				</div>
-				<form id="user-form">
+				<form id="user-form" onSubmit={handleSubmit(onSubmit)}>
 					<fieldset>
 						<label className="labels" id="description">
 							Beskriv deg selv
@@ -19,8 +35,9 @@ export const UserSettings = (prop) => {
 							id="usersettings-description"
 							htmlFor="description"
 							form="user-form"
-							defaultValue={prop.description}
+							defaultValue={prop.profile.description}
 							maxLength="200"
+							{...register("description", { required: true })}
 						></textarea>
 					</fieldset>
 					<fieldset>
@@ -29,11 +46,11 @@ export const UserSettings = (prop) => {
 						</label>
 					</fieldset>
 					<div id="tag-container">
-						{prop.skills.map((skill, key) => (
+						{/* {prop.skills.map((skill, key) => (
 							<div className="tag-box" key={key}>
 								{skill}
 							</div>
-						))}
+						))} */}
 					</div>
 					<button className="save">Lagre</button>
 				</form>

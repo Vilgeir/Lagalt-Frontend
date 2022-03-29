@@ -25,6 +25,15 @@
 	padding: 1rem;
 }
 
+#headline {
+	display: flex;
+	align-items: center;
+}
+
+#text-headline {
+	margin-right: 1rem;
+}
+
 #close-button {
 	position: absolute;
 	right: 1rem;

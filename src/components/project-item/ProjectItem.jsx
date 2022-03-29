@@ -23,6 +23,7 @@ const ProjectItem = (prop) => {
 			setData(data)
 		}
 	}
+	console.log(prop)
 	console.log(data)
 
 	return (
