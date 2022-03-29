@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import FilterProject from "../components/filter/FilterProjects"
+import FilterProject from "../components/Filter/FilterProjects"
 import ProjectList from "../components/project-list/ProjectList"
 import { getAllTasks, getFilteredCategory } from "../api/tasks"
 import "./Main.css"

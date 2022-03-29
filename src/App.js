@@ -4,11 +4,10 @@ import Main from "./pages/Main"
 import Profile from "./pages/Profile"
 import NavBar from "./components/navbar/NavBar"
 import Create from "./pages/Create"
-import Login from "./components/login/Login"
+import Login from "./components/Login/Login"
 import { useUser } from "./AuthContext/AuthContext"
 import UpdateProject from "./pages/updateProject"
 import { useApp } from "./AuthContext/ApplicationContext"
-import { useState } from "react"
 
 const App = () => {
 	const { data, setData } = useApp()
