@@ -101,7 +101,7 @@ const Create = () => {
 								name="skills"
 								value="3"
 							></input>
-							<label htmlFor="lydopptak-checkbox">Lydopptak</label>
+							<label htmlFor="lydopptak-checkbox">Programming</label>
 						</div>
 						<div>
 							<input
