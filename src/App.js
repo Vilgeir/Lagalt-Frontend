@@ -8,6 +8,7 @@ import Login from "./components/Login/Login"
 import { useUser } from "./AuthContext/AuthContext"
 import UpdateProject from "./pages/updateProject"
 import { useApp } from "./AuthContext/ApplicationContext"
+import { useState } from "react"
 
 const App = () => {
 	const { data, setData } = useApp()
@@ -15,7 +16,7 @@ const App = () => {
 
 	return (
 		<BrowserRouter>
-			<NavBar data={data} setData={setData} />
+			<NavBar searchData={data} setSearchData={setData} />
 			<div className="app-container">
 				<Routes>
 					<Route path="/" element={<Main data={data} setData={setData} />} />

@@ -3,7 +3,6 @@ import FilterProject from "../components/Filter/FilterProjects"
 import ProjectList from "../components/project-list/ProjectList"
 import { getAllTasks, getFilteredCategory } from "../api/tasks"
 import "./Main.css"
-import { useApp } from "../AuthContext/ApplicationContext"
 
 const Main = (props) => {
 	/* fetch("https://lagalt.azurewebsites.net/api/Projects/1")
@@ -17,10 +16,13 @@ const Main = (props) => {
 
 	const filterByCategory = async (e) => {
 		const filterValue = e.target.value
-		if (filterValue === "") {
-			setFilterProperty(filterValue)
-			setData(data)
+		console.log(filterValue)
+		if (filterValue === "all") {
+			const [error, result] = await getAllTasks(offset, limit)
+			setFilterProperty("all")
+			setData(result)
 		}
+
 		if (filterValue === "1") {
 			const [error, result] = await getFilteredCategory(1)
 			setFilterProperty("1")
@@ -29,6 +31,7 @@ const Main = (props) => {
 			}
 			return
 		}
+
 		if (filterValue === "2") {
 			const [error, result] = await getFilteredCategory(2)
 			if (result) {

@@ -9,11 +9,15 @@ const SearchBar = (props) => {
 	const [searchParam, setSearchParam] = useState("")
 
 	useEffect(async () => {
-		console.log(data)
-
+		if (searchParam === "") {
+			return
+		}
 		const foundProj = async () => {
 			const [error, result] = await searchProject(searchParam)
-			setData(result)
+
+			if (result) {
+				setData(...result)
+			}
 
 			if (error) {
 				console.log(error)
@@ -22,6 +26,11 @@ const SearchBar = (props) => {
 
 		foundProj()
 	}, [searchParam])
+
+	const handleSearchButton = () => {
+		setSearchParam("")
+	}
+
 	return (
 		<div className="search-container">
 			<input
@@ -31,7 +40,11 @@ const SearchBar = (props) => {
 				value={searchParam}
 				onChange={(e) => setSearchParam(e.target.value)}
 			></input>
-			<button type="submit" className="search-button">
+			<button
+				type="submit"
+				className="search-button"
+				onChange={handleSearchButton}
+			>
 				Search
 			</button>
 		</div>
