@@ -4,7 +4,7 @@ import Main from "./pages/Main"
 import Profile from "./pages/Profile"
 import NavBar from "./components/navbar/NavBar"
 import Create from "./pages/Create"
-import Login from "./components/login/Login"
+import Login from "./components/Login/Login"
 import { useUser } from "./AuthContext/AuthContext"
 import UpdateProject from "./pages/updateProject"
 import { useApp } from "./AuthContext/ApplicationContext"
@@ -15,7 +15,7 @@ const App = () => {
 
 	return (
 		<BrowserRouter>
-			<NavBar data={data} setData={setData} />
+			<NavBar searchData={data} setSearchData={setData} />
 			<div className="app-container">
 				<Routes>
 					<Route path="/" element={<Main data={data} setData={setData} />} />

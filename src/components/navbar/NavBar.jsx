@@ -7,8 +7,9 @@ import "./navbar.css"
 
 const NavBar = (props) => {
 	const { user } = useUser()
+	console.log(props)
 
-	const { data } = props
+	const { searchData, setSearchData } = props
 
 	return (
 		<div>
@@ -16,7 +17,7 @@ const NavBar = (props) => {
 				<NavLink id="title-nav" to="/">
 					<h2 id="title">LAGALT</h2>
 				</NavLink>
-				<SearchBar data={data} />
+				<SearchBar data={searchData} setData={setSearchData} />
 				<div className="right-container">
 					{!user && (
 						<NavLink to="/login">

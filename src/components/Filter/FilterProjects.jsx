@@ -9,7 +9,7 @@ const FilterProject = (props) => {
 					value={props.filterProperty}
 					onChange={props.onFilter}
 				>
-					<option className="">Kategori</option>
+					<option value="all">Kategori</option>
 					<option value="1">Music</option>
 					<option value="2">Film </option>
 					<option value="3">Game Development</option>
