@@ -2,12 +2,14 @@ import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import { createProject } from "../api/create-project"
+import { useUser } from "../AuthContext/AuthContext"
 import "./Create.css"
 
 const Create = () => {
 	const navigate = useNavigate()
 	const { register, handleSubmit } = useForm()
 	const [loading, setLoading] = useState(false)
+	const { user } = useUser()
 
 	const onSubmit = async ({ ...register }) => {
 		let skillsTemp = Array.from(
@@ -16,7 +18,7 @@ const Create = () => {
 		let skills = skillsTemp.map(Number)
 
 		setLoading(true)
-		const [error] = await createProject(register, skills)
+		const [error] = await createProject(register, skills, user)
 		if (error !== null) {
 			alert(error + "\n Noe gikk feil, vennligst prøv igjen senere.")
 		} else {
