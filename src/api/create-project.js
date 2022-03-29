@@ -1,4 +1,4 @@
-export const createProject = async (formData, skills) => {
+export const createProject = async (formData, skills, user) => {
 	try {
 		const response = await fetch(
 			"https://lagalt.azurewebsites.net/api/Projects",
@@ -10,9 +10,9 @@ export const createProject = async (formData, skills) => {
 					description: formData.description,
 					photo: formData.photo,
 					progress: "founding",
-					users: [1],
+					users: [user.uid],
 					skills: skills,
-					projectLeaderIds: [1],
+					projectLeaderIds: [user.uid],
 					fieldId: parseInt(formData.fieldId),
 				}),
 			}

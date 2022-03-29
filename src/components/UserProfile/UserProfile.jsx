@@ -3,16 +3,35 @@ import { UserSettings } from "../user-settings/UserSettings"
 import "./UserProfile.css"
 import { useUser } from "../../AuthContext/AuthContext"
 import { loginUser } from "../../api/create-user"
+import DetailedItem from "../detailed-item/DetailedItem"
+import { getProject } from "../../api/get-project"
 
 export const UserProfile = (prop) => {
 	const [showModal, setShowModal] = useState(false)
 	const [profile, setProfile] = useState([])
+	const [loading, setLoading] = useState(true)
+	const { user } = useUser()
+	const [isOpen, setIsOpen] = useState(false)
+	const [projectData, setProjectData] = useState()
+
+	const toggleDetails = () => {
+		setIsOpen(!isOpen)
+	}
 
 	const handleClick = () => {
 		setShowModal(!showModal)
 	}
 
-	const { user } = useUser()
+	const openProject = async (projectId) => {
+		const [error, project] = await getProject(projectId)
+
+		if (error != null) {
+			console.log(error)
+		} else {
+			setProjectData(project)
+			setIsOpen(true)
+		}
+	}
 
 	useEffect(() => {
 		const makeUser = async () => {
@@ -23,11 +42,11 @@ export const UserProfile = (prop) => {
 			if (userResponse !== null) {
 				//console.log(userResponse)
 				setProfile(userResponse)
+				setLoading(false)
 			}
 		}
 		makeUser()
 	}, [])
-
 	console.log(profile)
 	return (
 		<>
@@ -38,11 +57,15 @@ export const UserProfile = (prop) => {
 						<h1>{user.displayName}</h1>
 					</div>
 					<div id="profile-settings-button" onClick={handleClick}>
-						<span className="material-icons">Innstillinger</span>
+						<span className="material-icons">settings</span>
 					</div>
 				</div>
 				<h2>Om meg</h2>
-				<p>{profile.userId}</p>
+				{profile.description == "" ? (
+					<p>Trykk på tannhjulet og lag en beskrivelse</p>
+				) : (
+					<p>{profile.description}</p>
+				)}
 				<h2>Ferdigheter</h2>
 				<div id="tag-container">
 					{prop.skills.map((skill, key) => (
@@ -51,20 +74,26 @@ export const UserProfile = (prop) => {
 						</div>
 					))}
 				</div>
-				<div id="profile-projects-container">
-					<h2>Prosjekter</h2>
-					<div>
-						<span>Pågående:</span>
-						{profile.projects.map((projects, key) => (
-							<span key={key}>{projects}</span>
-						))}
-						<div id="profile-current-projects-container"></div>
-					</div>
-					<div>
-						<span>Ferdige:</span>
-						<div id="profile-closed-projects-container"></div>
-					</div>
-				</div>
+				{loading ? (
+					<p>no projects</p>
+				) : (
+					<>
+						{isOpen && (
+							<DetailedItem handleClose={toggleDetails} {...projectData} />
+						)}
+						<div id="profile-projects-container">
+							<h2>Prosjekter</h2>
+							<div>
+								{profile.projects.map((projects, key) => (
+									<p onClick={() => openProject(projects.projectId)} key={key}>
+										{projects.projectTitle}
+									</p>
+								))}
+								<div id="profile-current-projects-container"></div>
+							</div>
+						</div>
+					</>
+				)}
 			</section>
 			{showModal && <UserSettings handleClose={handleClick} {...prop} />}
 		</>

@@ -7,7 +7,7 @@ export const UserSettings = (prop) => {
 				<div id="usersettings-header">
 					<h1>Legg til informasjon</h1>
 					<div id="profile-settings-button" onClick={prop.handleClose}>
-						<span className="material-icons">Lukk</span>
+						<span className="material-icons">close</span>
 					</div>
 				</div>
 				<form id="user-form">
