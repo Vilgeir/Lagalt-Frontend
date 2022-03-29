@@ -5,8 +5,10 @@ import SearchBar from "../searchbar/SearchBar"
 
 import "./navbar.css"
 
-const NavBar = () => {
+const NavBar = (props) => {
 	const { user } = useUser()
+
+	const { data } = props
 
 	return (
 		<div>
@@ -14,7 +16,7 @@ const NavBar = () => {
 				<NavLink id="title-nav" to="/">
 					<h2 id="title">LAGALT</h2>
 				</NavLink>
-				<SearchBar />
+				<SearchBar data={data} />
 				<div className="right-container">
 					{!user && (
 						<NavLink to="/login">

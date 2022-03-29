@@ -1,10 +1,12 @@
 export const createProject = async (formData, skills, user) => {
 	try {
 		const response = await fetch(
-			"https://lagalt.azurewebsites.net/api/Projects",
+			"https://lagalt.azurewebsites.net/api/Projects/",
 			{
 				method: "POST",
-				headers: { "Content-Type": "application/json" },
+				headers: {
+					"Content-Type": "application/json",
+				},
 				body: JSON.stringify({
 					projectTitle: formData.projectTitle,
 					description: formData.description,
@@ -23,6 +25,7 @@ export const createProject = async (formData, skills, user) => {
 		}
 
 		const data = await response.json
+		console.log(data)
 		return [null, data]
 	} catch (error) {
 		return [error.message, []]
