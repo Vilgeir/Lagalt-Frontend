@@ -14,7 +14,16 @@ const Login = () => {
 		const res = await socialMediaAuth(provider)
 		console.log(res)
 
-		navigate("/ ")
+		navigate("/profile")
+		/* const [error, userResponse] = await loginUser(user)
+		if (error !== null) {
+			console.log(error)
+		}
+		if (userResponse !== null) {
+			setProfileData(userResponse)
+			console.log(profileData)
+			navigate("/profile")
+		} */
 	}
 
 	return (
@@ -24,7 +33,7 @@ const Login = () => {
 				className="login-button"
 			>
 				<img className="logo" src="/images/google-logo.png"></img>
-				<span>'Logg' inn med Google</span>
+				<span>Logg inn med Google</span>
 			</button>
 			<button
 				onClick={() => handleLogin(facebookProvider)}

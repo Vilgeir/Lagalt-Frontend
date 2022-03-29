@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react"
-import FilterProject from "../components/Filter/FilterProjects"
+import FilterProject from "../components/filter/FilterProjects"
 import ProjectList from "../components/project-list/ProjectList"
 import { getAllTasks, getFilteredCategory } from "../api/tasks"
 import "./Main.css"
-import { useApp } from "../AuthContext/ApplicationContext"
 
 const Main = (props) => {
 	/* fetch("https://lagalt.azurewebsites.net/api/Projects/1")
@@ -26,32 +25,36 @@ const Main = (props) => {
 			setFilterProperty("1")
 			if (result) {
 				setData(result)
+			} else {
+				console.log(error)
 			}
-			return
 		}
 		if (filterValue === "2") {
 			const [error, result] = await getFilteredCategory(2)
 			if (result) {
 				setFilterProperty("2")
 				setData(result)
+			} else {
+				console.log(error)
 			}
-			return
 		}
 		if (filterValue === "3") {
 			const [error, result] = await getFilteredCategory(3)
 			if (result) {
 				setFilterProperty("3")
 				setData(result)
+			} else {
+				console.log(error)
 			}
-			return
 		}
 		if (filterValue === "4") {
 			const [error, result] = await getFilteredCategory(4)
 			if (result) {
 				setFilterProperty("4")
 				setData(result)
+			} else {
+				console.log(error)
 			}
-			return
 		}
 	}
 

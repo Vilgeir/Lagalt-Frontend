@@ -9,7 +9,9 @@ export const searchProject = async (name) => {
 		}
 		const results = await response.json()
 		return [null, [results]]
-	} catch (error) {}
+	} catch (error) {
+		console.log(error)
+	}
 }
 
 export const getAllTasks = async (offset, limit) => {
@@ -20,7 +22,9 @@ export const getAllTasks = async (offset, limit) => {
 		}
 		const { results } = await response.json()
 		return [null, results]
-	} catch (error) {}
+	} catch (error) {
+		console.log(error)
+	}
 }
 export const getFilteredCategory = async (fieldId) => {
 	try {
@@ -30,7 +34,9 @@ export const getFilteredCategory = async (fieldId) => {
 		}
 		const { results } = await response.json()
 		return [null, results]
-	} catch (error) {}
+	} catch (error) {
+		console.log(error)
+	}
 }
 
 // export const getFilm = async () => {
