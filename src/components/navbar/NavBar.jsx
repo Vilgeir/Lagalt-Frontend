@@ -1,6 +1,7 @@
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import { useUser } from "../../AuthContext/AuthContext"
 import firebase from "../../config/config-firebase"
+import PrivacyMode from "../lock/lock"
 import SearchBar from "../searchbar/SearchBar"
 
 import "./navbar.css"
@@ -14,9 +15,9 @@ const NavBar = (props) => {
 	return (
 		<div>
 			<nav className="navbar-container">
-				<NavLink id="title-nav" to="/">
+				<Link id="title-nav" end to="/">
 					<h2 id="title">LAGALT</h2>
-				</NavLink>
+				</Link>
 				<SearchBar data={searchData} setData={setSearchData} />
 				<div className="right-container">
 					{!user && (
@@ -37,11 +38,13 @@ const NavBar = (props) => {
 									Profil
 								</button>
 							</NavLink>
+
 							<NavLink to={"/"} onClick={() => firebase.auth().signOut()}>
 								<button className="button" id="logout-button">
 									Logg ut
 								</button>
 							</NavLink>
+							<PrivacyMode />
 						</>
 					)}
 				</div>

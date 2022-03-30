@@ -5,13 +5,17 @@ import App from "./App"
 import reportWebVitals from "./reportWebVitals"
 import AuthProvider from "./AuthContext/AuthContext"
 import AppProvider from "./AuthContext/ApplicationContext"
+import ThemeProvider from "./AuthContext/ThemeContext"
+import "material-icons/iconfont/material-icons.css"
 
 ReactDOM.render(
 	<AuthProvider>
 		<AppProvider>
-			<React.StrictMode>
-				<App />
-			</React.StrictMode>
+			<ThemeProvider>
+				<React.StrictMode>
+					<App />
+				</React.StrictMode>
+			</ThemeProvider>
 		</AppProvider>
 	</AuthProvider>,
 	document.getElementById("root")
