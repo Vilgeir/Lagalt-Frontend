@@ -22,9 +22,7 @@ const DetailedItem = (prop) => {
 							)} */}
 						</div>
 						<h5 id="field-headline">{prop.field.fieldName}</h5>
-						{user && (
-							<h5 id="field-headline">Laget av: {prop.users[0].userName}</h5>
-						)}
+						{user && <h5 id="field-headline">Laget av: {user.displayName}</h5>}
 						<h4 className="undertitle">Beskrivelse</h4>
 						<span id="project-summary">{prop.description}</span>
 						{/* <p>Brukere: {prop.users.map((x) => x.userName + " ")}</p> */}
