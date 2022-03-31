@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom"
 import { useUser } from "../../AuthContext/AuthContext"
 import firebase from "../../config/config-firebase"
-import PrivacyMode from "../lock/lock"
+//import PrivacyMode from "../lock/lock"
 import SearchBar from "../searchbar/SearchBar"
 
 import "./navbar.css"
@@ -44,7 +44,7 @@ const NavBar = (props) => {
 									Logg ut
 								</button>
 							</NavLink>
-							<PrivacyMode />
+							{/* <PrivacyMode /> */}
 						</>
 					)}
 				</div>

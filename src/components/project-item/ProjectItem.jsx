@@ -3,6 +3,8 @@ import React, { useState } from "react"
 import DetailedItem from "../detailed-item/DetailedItem"
 //import JoinButton from "../join-button/JoinButton"
 import "./project-item.css"
+//import NoImg from "../assets/no-image.jpg"
+
 //import { updateParticipants } from "../../api/update-project"
 
 const ProjectItem = (prop) => {
