@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import FilterProject from "../components/Filter/FilterProjects"
+import FilterProject from "../components/filter/FilterProjects"
 import ProjectList from "../components/project-list/ProjectList"
 import { getAllTasks, getFilteredCategory } from "../api/tasks"
 import "./Main.css"
@@ -16,11 +16,14 @@ const Main = (props) => {
 
 	const filterByCategory = async (e) => {
 		const filterValue = e.target.value
-		console.log(filterValue)
+
 		if (filterValue === "all") {
 			const [error, result] = await getAllTasks(offset, limit)
 			setFilterProperty("all")
 			setData(result)
+			if (error != null) {
+				console.log(error)
+			}
 		}
 
 		if (filterValue === "1") {
@@ -98,6 +101,7 @@ const Main = (props) => {
 		findTasks()
 	}, [offset])
 
+	console.log(data)
 	return (
 		<>
 			<FilterProject

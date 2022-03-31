@@ -1,14 +1,14 @@
 import React, { useState } from "react"
-import { useUser } from "../../AuthContext/AuthContext"
+//import { useUser } from "../../AuthContext/AuthContext"
 import DetailedItem from "../detailed-item/DetailedItem"
-import JoinButton from "../join-button/JoinButton"
+//import JoinButton from "../join-button/JoinButton"
 import "./project-item.css"
 //import { updateParticipants } from "../../api/update-project"
 
 const ProjectItem = (prop) => {
 	const [isOpen, setIsOpen] = useState(false)
 	//const [data, setData] = useState()
-	const { user } = useUser()
+	//const { user } = useUser()
 
 	const toggleDetails = () => {
 		setIsOpen(!isOpen)
@@ -29,9 +29,9 @@ const ProjectItem = (prop) => {
 			<main id="project-item-container">
 				<header id="item-header">
 					<h3 id="project-title">{prop.projectTitle}</h3>
-					{user && prop.users.map((x) => x.userId) != user.uid && (
+					{/* {user && prop.users.map((x) => x.userId) != user.uid && (
 						<JoinButton {...prop} />
-					)}
+					)} */}
 				</header>
 				<div id="item-body" onClick={toggleDetails}>
 					<img id="item-img" src={prop.photo}></img>

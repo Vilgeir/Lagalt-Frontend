@@ -6,6 +6,8 @@ import "./SearchBar.css"
 const SearchBar = (props) => {
 	const { data, setData } = props
 
+	console.log(data)
+
 	const [searchParam, setSearchParam] = useState("")
 
 	useEffect(async () => {
