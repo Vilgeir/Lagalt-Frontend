@@ -2,7 +2,7 @@ import "./DetailedItem.css"
 import ProjectSettingsButton from "../ProjectSettingsButton/ProjectSettingsButton"
 import { useUser } from "../../AuthContext/AuthContext"
 //import JoinButton from "../join-button/JoinButton"
-
+//prop.users.map((x) => x.userId) != user.uid &&
 const DetailedItem = (prop) => {
 	const { user } = useUser()
 	console.log(user)
@@ -17,12 +17,14 @@ const DetailedItem = (prop) => {
 					<div id="">
 						<div id="headline">
 							<h2 id="text-headline">{prop.projectTitle}</h2>
-							{/* {user && prop.users.map((x) => x.userId) != user.uid && (
+							{/* {user && prop.users[0].userId != user.uid && (
 								<JoinButton {...prop} />
 							)} */}
 						</div>
 						<h5 id="field-headline">{prop.field.fieldName}</h5>
-						{user && <h5 id="field-headline">Laget av: {user.displayName}</h5>}
+						{user && (
+							<h5 id="field-headline">Laget av: {prop.users[0].userName}</h5>
+						)}
 						<h4 className="undertitle">Beskrivelse</h4>
 						<span id="project-summary">{prop.description}</span>
 						{/* <p>Brukere: {prop.users.map((x) => x.userName + " ")}</p> */}

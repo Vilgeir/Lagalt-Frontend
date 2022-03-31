@@ -33,48 +33,39 @@ export const updateProject = async (formData, skills) => {
 
 export const updateProjectTwo = async (prop, user) => {
 	//let skillsArr = []
-	let userArr = []
+	console.log(user)
+	/* let userArr = prop.user.userId */
 
-	const handleArray = () => {
+	const userObj = {
+		projectId: prop.projectId,
+		projectTitle: prop.projectTitle,
+		description: prop.description,
+		photo: prop.photo,
+		progress: prop.progress,
+		fieldId: prop.field.fieldId,
+		skills: [3],
+		users: [{ userId: prop.users[0].userId }, { userId: user.uid }],
+		gitRepo: "http://amani.net",
+	}
+
+	/* const handleArray = () => {
 		userArr.push(prop.users[0].userId)
 		console.log(userArr)
 		userArr.push(user.uid)
 		console.log(userArr)
 	}
 	handleArray()
-	console.log(prop.users)
+	console.log(prop.users) */
 	try {
 		const response = await fetch(
-			"https://lagalt.azurewebsites.net/api/Projects",
+			"https://lagalt.azurewebsites.net/api/Projects/",
 			{
-				method: "PUT",
+				method: "POST",
 				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({
-					projectId: prop.projectId,
-					projectTitle: prop.projectTitle,
-					description: prop.description,
-					photo: prop.photo,
-					progress: prop.progress,
-					fieldId: prop.field.fieldId,
-					skills: [2],
-					users: ["ZkrJ8CVSXnTfzocpNo8zANvkbB82"],
-					gitRepo: "http://amani.net",
-				}),
+				body: JSON.stringify(userObj),
 			}
 		)
-		console.log(
-			JSON.stringify({
-				projectId: prop.projectId,
-				projectTitle: prop.projectTitle,
-				description: prop.description,
-				photo: prop.photo,
-				progress: prop.progress,
-				fieldId: prop.field.fieldId,
-				skills: [2],
-				users: ["ZkrJ8CVSXnTfzocpNo8zANvkbB82"],
-				gitRepo: "http://amani.net",
-			})
-		)
+		console.log(JSON.stringify(userObj))
 		if (!response.ok) {
 			console.log(response)
 			throw new Error(response.error)

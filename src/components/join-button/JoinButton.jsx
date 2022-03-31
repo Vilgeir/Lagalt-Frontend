@@ -4,7 +4,7 @@ import { useUser } from "../../AuthContext/AuthContext"
 
 const JoinButton = (prop) => {
 	const { user } = useUser()
-	console.log(prop.users[0].userId)
+	//console.log(prop.users[0].userId)
 	const handleClick = async () => {
 		const [error, updated] = await updateProjectTwo(prop, user)
 
