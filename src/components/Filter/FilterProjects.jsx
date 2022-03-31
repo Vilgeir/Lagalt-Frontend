@@ -10,10 +10,10 @@ const FilterProject = (props) => {
 					onChange={props.onFilter}
 				>
 					<option value="all">Kategori</option>
-					<option value="1">Music</option>
+					<option value="1">Musikk</option>
 					<option value="2">Film </option>
-					<option value="3">Game Development</option>
-					<option value="4">Web Development</option>
+					<option value="3">Spillutvikling</option>
+					<option value="4">Webutvikling</option>
 				</select>
 				<select
 					className="selectionFilter"
@@ -21,8 +21,8 @@ const FilterProject = (props) => {
 					onChange={props.onSort}
 				>
 					<option value="Sorter">Sorter</option>
-					<option value="ASC">ASC</option>
-					<option value="DESC">DESC</option>
+					<option value="ASC">A-Z</option>
+					<option value="DESC">Z-A</option>
 				</select>
 			</div>
 		</main>

@@ -26,7 +26,7 @@ const DetailedItem = (prop) => {
 						<h4 className="undertitle">Beskrivelse</h4>
 						<span id="project-summary">{prop.description}</span>
 						{/* <p>Brukere: {prop.users.map((x) => x.userName + " ")}</p> */}
-						<h4 className="undertitle">Tags</h4>
+						<h4 className="undertitle">Tagger</h4>
 						<div id="tag-container">
 							{prop.skills.map((skill, key) => (
 								<div className="tag-box" key={key}>
@@ -37,7 +37,7 @@ const DetailedItem = (prop) => {
 						{user && (
 							<>
 								<div>
-									<h4 className="undertitle">Git repo</h4>
+									<h4 className="undertitle">Git link/ressurser</h4>
 									<a href={prop.gitRepo}>{prop.gitRepo}</a>
 								</div>
 

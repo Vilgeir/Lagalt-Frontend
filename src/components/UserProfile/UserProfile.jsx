@@ -83,17 +83,17 @@ export const UserProfile = (prop) => {
 						)}
 						<div id="profile-projects-container">
 							<h2>Prosjekter</h2>
-							<div>
+							<div className="proj-main">
 								{profile.projects.map((projects, key) => (
-									<>
-										<p
-											id="project-link"
-											onClick={() => openProject(projects.projectId)}
-											key={key}
-										>
-											{projects.projectTitle}
-										</p>
-									</>
+									<div
+										className="project-container"
+										key={key}
+										id="project-link"
+										onClick={() => openProject(projects.projectId)}
+									>
+										<h4 className="p-title">{projects.projectTitle}</h4>
+										<span>{projects.description}</span>
+									</div>
 								))}
 								<div id="profile-current-projects-container"></div>
 							</div>

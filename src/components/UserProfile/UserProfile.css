@@ -50,6 +50,24 @@
 	align-items: center;
 }
 
+.proj-main {
+	/* background-color: rgb(240, 240, 240); */
+}
+
+.project-container {
+	padding: 0.5rem;
+	border-radius: 0.2rem;
+	transition: 0.2s;
+}
+
+.project-container:hover {
+	background-color: rgb(245, 245, 245);
+}
+
+.p-title {
+	margin: 0;
+}
+
 #project-link {
 	cursor: pointer;
 	font-weight: 400;
