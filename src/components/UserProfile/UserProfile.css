@@ -49,3 +49,12 @@
 	justify-content: flex-start;
 	align-items: center;
 }
+
+#project-link {
+	cursor: pointer;
+	font-weight: 400;
+}
+
+#project-link:hover {
+	color: orangered;
+}

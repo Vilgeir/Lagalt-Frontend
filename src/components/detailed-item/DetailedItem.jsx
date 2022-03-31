@@ -1,17 +1,28 @@
 import "./DetailedItem.css"
 import ProjectSettingsButton from "../ProjectSettingsButton/ProjectSettingsButton"
+import { useUser } from "../../AuthContext/AuthContext"
+//import JoinButton from "../join-button/JoinButton"
 
 const DetailedItem = (prop) => {
+	const { user } = useUser()
+	console.log(user)
 	return (
 		<>
 			<main id="main-container">
 				<div id="view-container">
-					<ProjectSettingsButton projectId={prop.projectId} />
+					{user && <ProjectSettingsButton projectId={prop.projectId} />}
 					<button id="close-button" onClick={prop.handleClose}>
 						X
 					</button>
 					<div id="">
-						<h2>{prop.projectTitle}</h2>
+						<div id="headline">
+							<h2 id="text-headline">{prop.projectTitle}</h2>
+							{/* {user && prop.users.map((x) => x.userId) != user.uid && (
+								<JoinButton {...prop} />
+							)} */}
+						</div>
+						<h5 id="field-headline">{prop.field.fieldName}</h5>
+						{user && <h5 id="field-headline">Laget av: {user.displayName}</h5>}
 						<h4 className="undertitle">Beskrivelse</h4>
 						<span id="project-summary">{prop.description}</span>
 						{/* <p>Brukere: {prop.users.map((x) => x.userName + " ")}</p> */}
@@ -23,18 +34,22 @@ const DetailedItem = (prop) => {
 								</div>
 							))}
 						</div>
-						<div>
-							<h4 className="undertitle">Git repo</h4>
-							{/* <a href={prop.gitlink}>{prop.gitlink}</a> */}
-						</div>
+						{user && (
+							<>
+								<div>
+									<h4 className="undertitle">Git repo</h4>
+									<a href={prop.gitRepo}>{prop.gitRepo}</a>
+								</div>
 
-						<h4 className="undertitle">Forum</h4>
+								<h4 className="undertitle">Forum</h4>
 
-						<input
-							id="message-input"
-							type="text"
-							placeholder="Skriv en meldig"
-						></input>
+								<input
+									id="message-input"
+									type="text"
+									placeholder="Skriv en meldig"
+								></input>
+							</>
+						)}
 					</div>
 				</div>
 			</main>

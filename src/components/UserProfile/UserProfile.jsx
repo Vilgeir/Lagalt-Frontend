@@ -85,9 +85,15 @@ export const UserProfile = (prop) => {
 							<h2>Prosjekter</h2>
 							<div>
 								{profile.projects.map((projects, key) => (
-									<p onClick={() => openProject(projects.projectId)} key={key}>
-										{projects.projectTitle}
-									</p>
+									<>
+										<p
+											id="project-link"
+											onClick={() => openProject(projects.projectId)}
+											key={key}
+										>
+											{projects.projectTitle}
+										</p>
+									</>
 								))}
 								<div id="profile-current-projects-container"></div>
 							</div>
@@ -95,7 +101,9 @@ export const UserProfile = (prop) => {
 					</>
 				)}
 			</section>
-			{showModal && <UserSettings handleClose={handleClick} {...prop} />}
+			{showModal && (
+				<UserSettings handleClose={handleClick} profile={profile} />
+			)}
 		</>
 	)
 }

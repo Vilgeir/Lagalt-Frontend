@@ -1,4 +1,5 @@
 export const createProject = async (formData, skills, user) => {
+	console.log(skills)
 	try {
 		const response = await fetch(
 			"https://lagalt.azurewebsites.net/api/Projects/",
@@ -12,12 +13,24 @@ export const createProject = async (formData, skills, user) => {
 					description: formData.description,
 					photo: formData.photo,
 					progress: "founding",
-					users: [user.uid],
-					skills: skills,
-					projectLeaderIds: [user.uid],
 					fieldId: parseInt(formData.fieldId),
+					skills: skills,
+					users: [user.uid],
+					gitRepo: formData.gitRepoLink,
 				}),
 			}
+		)
+		console.log(
+			JSON.stringify({
+				projectTitle: formData.projectTitle,
+				description: formData.description,
+				photo: formData.photo,
+				progress: "founding",
+				field: parseInt(formData.fieldId),
+				skills: [1],
+				users: [user.uid],
+				gitRepo: formData.gitRepoLink,
+			})
 		)
 		if (!response.ok) {
 			console.log(response)
